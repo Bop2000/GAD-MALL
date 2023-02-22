@@ -44,8 +44,6 @@ bash run_GAD_MALL.sh
 ```
 
 
-**Note:** The code for graph classification simulation provided in this demo is the same with that using the random resistive memory hardware. The only difference is the weight multiplication function `WeightMultiplication` performs hardware calls to a Xilinx FPGA in the customized system via [`pynq.dma`](https://pynq.readthedocs.io/en/v2.5/pynq_libraries/dma.html).
-
 ## Dataset
 
 The raw data '3D_CAE_train.npy' for training 3D-CAE can be downloaded [here](https://drive.google.com/file/d/1BfmD4bsPS2hG5zm7XGLHc8lpUN_WqhgV/view?usp=share_link).
