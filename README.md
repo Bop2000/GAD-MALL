@@ -37,7 +37,7 @@ pip install torch-geometric==1.7.2
 
 ## Pipeline
 
-To run the generative architecture design-multiobjective active learning loop (GAD-MALL) pipeline,please follow these steps:
+To run the generative architecture design-multiobjective active learning loop (GAD-MALL) pipeline, please follow these steps:
 
 1. Train 3D-CAE model as the generative model by running the `3D_CAE.py` Python code in the folder `GAD-MALL`, please run the following line in terminal:
 
