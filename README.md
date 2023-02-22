@@ -64,16 +64,9 @@ bash run_GAD_MALL.sh
 
 ## More
 
-For more about `Model Parameters Optimizing using Bayesian Optimization`, see `README` in folder `Model Parameter Optimize_Bayesian Optimization`
+For more about `Model Parameters Optimizing using Bayesian Optimization`, see code and `README` in folder `Model Parameter Optimize_Bayesian Optimization`
 
-For more about `Other State-of-the-art Active Learning Methods` compared with our best method GAD-MALL, see `README` in folder `Other-State-of-the-art-Active-Learning`
-
-
-## Dataset
-
-The raw data `3D_CAE_train.npy` for training 3D-CAE can be downloaded [here](https://drive.google.com/file/d/1BfmD4bsPS2hG5zm7XGLHc8lpUN_WqhgV/view?usp=share_link).
-
-The raw data for training 3D-CNN is in the folder `GAD-MALL/GAD-MALL/data/`. One big file named `Matrix60.npy` can be downloaded [here](https://drive.google.com/file/d/1VRH4X_mACxM82HoaplwV0ThaDiN3iPXm/view?usp=share_link).
+For more about `Other State-of-the-art Active Learning Methods` compared with our best method GAD-MALL, see cede and `README` in folder `Other-State-of-the-art-Active-Learning`
 
 ## CItation
 
