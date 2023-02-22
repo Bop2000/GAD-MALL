@@ -43,6 +43,13 @@ To search for high-performance architected materials with specific elastic modul
 bash run_GAD_MALL.sh
 ```
 
+For more about `Finite Element Method`, see `README` in folder `Finite Element Method by ABAQUS`
+
+For more about `Model Parameters Optimizing using Bayesian Optimization`, see `README` in folder `Model Parameter Optimize_Bayesian Optimization`
+
+For more about `Other State-of-the-art Active Learning Methods` compared with our best method GAD-MALL, see `README` in folder `Other-State-of-the-art-Active-Learning`
+
+For more about `TPMS-Gyroid Structure Generation`, see `README` in folder `TPMS-Gyroid-Generate-by-MATLAB`
 
 ## Dataset
 
