@@ -7,31 +7,15 @@ Architected materials that consist of multiple subelements arranged in particula
 
 ## Requirements
 
-The codes are tested on Ubuntu 20.04, CUDA 11.1 with the following packages:
+The codes are tested on Ubuntu 18.04, CUDA 11.4 with the following packages:
 
 ```shell
-torch == 1.9.0
-torch-geometric == 1.7.2
-tensorboad == 2.5.0
-scipy == 1.7.0
-numpy == 1.20.2
-```
-
-
-## Installation
-
-You can install the required dependencies with the following code.
-
-```shell
-conda create -n ESGNN python=3.8
-conda activate ESGNN
-conda install pytorch=1.9.0 cudatoolkit=11.1 -c pytorch -c conda-forge --yes
-pip install tensorboard=2.5.0
-CUDA=cu111
-TORCH=1.9.0
-pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-${TORCH}+${CUDA}.html 
-pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-${TORCH}+${CUDA}.html 
-pip install torch-geometric==1.7.2 
+tensorflow-gpu == 2.5.0
+keras == 2.3.1
+tqdm == 4.59.0
+scipy == 1.6.2
+numpy == 1.19.2
+pandas == 1.2.4
 ```
 
 ## Pipeline
