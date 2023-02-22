@@ -59,7 +59,9 @@ bash run_cora.sh
 
 ## Dataset
 
-Both the processed `MUTAG` and `COLLAB` datasets are provided in `data` folder. The raw data can be downloaded [here](https://drive.google.com/file/d/1BfmD4bsPS2hG5zm7XGLHc8lpUN_WqhgV/view?usp=share_link).
+The raw data '3D_CAE_train.npy' for training 3D-CAE can be downloaded [here](https://drive.google.com/file/d/1BfmD4bsPS2hG5zm7XGLHc8lpUN_WqhgV/view?usp=share_link).
+
+The raw data for training 3D-CNN is in the folder 'GAD-MALL/GAD-MALL/data/'. One big file named 'Matrix60.npy' can be downloaded [here](https://drive.google.com/file/d/1VRH4X_mACxM82HoaplwV0ThaDiN3iPXm/view?usp=share_link).
 
 ## CItation
 
