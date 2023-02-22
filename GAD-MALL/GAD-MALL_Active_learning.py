@@ -7,11 +7,27 @@ from tqdm import tqdm
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-import math
+# import math
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
 from prettytable import PrettyTable
 
+
+#Choose a elastic modulus target, such as target = 2500 MPa
+target = 2500
+target_upper=1.05*target
+target_lower=0.95*target
+sam_=1000000#Sampling number
+up=0.8
+b_size=2000
+n_size=6
+n_accu=60
+pi=3.14159265358979323846264
+xxx=(1/2)*2*pi
+sizeofdata0=[3,3,3]
+accu=20
+x_axis, y_axis,z_axis = np.linspace(n_size/(n_accu*2), n_size-n_size/(n_accu*2), n_accu),  np.linspace(n_size/(n_accu*2), n_size-n_size/(n_accu*2), n_accu),  np.linspace(n_size/(n_accu*2), n_size-n_size/(n_accu*2), n_accu)
+x, y,z = np.meshgrid(x_axis, y_axis,z_axis)
 
 #Import 3D-CAE model
 autoencoder= tensorflow.keras.models.load_model('model/3D_CAE_model.h5')
@@ -73,7 +89,7 @@ def Structure(x1,decoder):
   return new_x1
 
 def ensemble_predict_E(S):
-    modelname = "model/3dCNN_E.h5"
+    modelname = "3dCNN_E.h5"
     model_E = keras.models.load_model(modelname)
     E=model_E.predict(S)
     E=pd.DataFrame(E)
@@ -81,7 +97,7 @@ def ensemble_predict_E(S):
     return E               
 
 def ensemble_predict_Y(S):
-    modelname = "model/3dCNN_Y.h5"
+    modelname = "3dCNN_Y.h5"
     model_Y = keras.models.load_model(modelname)
     Y=model_Y.predict(S)
     Y=pd.DataFrame(Y)
@@ -89,8 +105,8 @@ def ensemble_predict_Y(S):
     return Y  
 
 def matrix_maker(value,n) -> np.array:
-    x = [[[value for k in range(n)] for j in range(n)] for i in range(n)]
-    matrix= np.array(x)
+    temp_x = [[[value for k in range(n)] for j in range(n)] for i in range(n)]
+    matrix= np.array(temp_x)
     return matrix
 
 def density12(blocks) -> np.array:
@@ -133,7 +149,6 @@ def findneighbour(inputdata,position):
     for i in range(r):
         if inputdata[i,0]==position[0] and inputdata[i,1]==position[1] and inputdata[i,2]==position[2]:
             flag=1
-            # id=i
     if flag!=0:
         for i in range(r):
             dertax=inputdata[i,0]-position[0]
@@ -245,9 +260,6 @@ def createunitofv(datainput,positon,nofv,dofv):
 
 def createv_2(data,sizeofdata,nofv,dofv):
     v=[]
-    # xdata=data[:,0]
-    # ydata=data[:,1]
-    # zdata=data[:,2]
     for k in range(sizeofdata[2]):
         temp2=[]
         for j in range(sizeofdata[1]):
@@ -269,72 +281,42 @@ def createv_2(data,sizeofdata,nofv,dofv):
             v=np.concatenate((v,temp2),axis=2)
     return v
 
+############
+r1=np.zeros((27,3))
+for a in range(3):
+    for b in range(3):
+        for c in range(3):
+            r1[9*a+3*b+c,0]=a
+            r1[9*a+3*b+c,1]=b
+            r1[9*a+3*b+c,2]=c
+#############
+oo=np.sin(pi*x)*np.cos(pi*y)+np.sin(pi*y)*np.cos(pi*z)+np.sin(pi*z)*np.cos(pi*x)
 def To60(matrix):
-#This script is used to generate 60*60*60 matrix for 3*3*3-unit Gyroid 
-#structures. The output of this script is stored in a 1*N "cell", namely
-#"the606060_cell", where N is the number of strutures and the
-#"606060_cell{x,1}" contains the 60*60*60 matrix of the corresponding structure.
-    the606060_cell=[]
+    the606060=[]
     N=len(matrix)
-#The variable named "data" contains the information of all the structures.
-#The first dimension of "data" repersents the number of strutures.
+    # r1_100=np.tile(r1, (N,1,1))
+    finished=(10*(1-matrix).reshape(N,27,1))*0.282-0.469
+    # print(finished.shape)
+    # data_all=np.concatenate((r1_100,finished),axis=2)
     for l in range(N):
-        n=3
-        r1=np.zeros((n*n*n,3))
-        for a in range(n):
-            for b in range(n):
-                for c in range(n):
-                    r1[n*n*a-n*n+n*b-n+c-1+1,0]=a
-                    r1[n*n*a-n*n+n*b-n+c-1+1,1]=b
-                    r1[n*n*a-n*n+n*b-n+c-1+1,2]=c
-#The variable named r1 equals to [1,1,11 1 2...3 3 3] when given
-#n=3.
-        finished=matrix.reshape(N,n*n*n)
-        r2=finished[l,:]
-#The variable named "finished" contains the information of all the
-#structures. The same content as the above-mentioned "data", but in
-#different forms. "finished" is a matrix of 27*N, each column contains
-#datas for one of the N strutures.
-        r2=10*(1-r2)
-        r2=r2.reshape(n*n*n,1)
+        r2=finished[l]
         data0=np.concatenate((r1,r2),axis=1)
-#"E_v" has two columns. The first one represents the porosity of the
-#Gyroid units (but not equals to), and the second is the corresponding
-#V values (V is the constant in a Gyroid unit's math function). In this
-#script, V is added by 0.9 so that all V values are positive.
-        for i in range(n*n*n):
-            data0[i,3]=data0[i,3]*0.282-0.469
-        b=3
-        sizeofdata0=[n,n,n]
-        accu=20
-        v=createv_2(data0,sizeofdata0,accu,b)
-#The function "createv_2" returns a matrix repersenting the
-#distribution of V in the 3D space. In this case, the size of the
-#result-matrix is "sizeofdata0*accu", which is 60*60*60. Variable b
-#is relevant to the smoothing steps of the function. 
-        the606060=np.zeros((60,60,60))
-        sizefgyroid=2
-        for j in range(60):
-            for k in range(60):
-                for l in range(60):
-                    x=6/120+(j)*6/60
-                    y=6/120+(k)*6/60
-                    z=6/120+(l)*6/60
-                    o=math.sin(2*math.pi/sizefgyroid*(x))*math.cos(2*math.pi/sizefgyroid*y) + math.sin(2*math.pi/sizefgyroid*y)*math.cos(2*math.pi/sizefgyroid*z) + math.sin(2*math.pi/sizefgyroid*z)*math.cos(2*math.pi/sizefgyroid*(x))
-#Above function is the math function for gyroid 
-                    o=o+v[j,k,l]
-                    if o<0.9:
-# It is uaually compaired to 0 to ditermine whether a point
-# is inside or outside the Gyroid surface. But V in this
-# script is added by 0.9 as mentioned above, so this time
-# it should be compared to 0.9.
-                        the606060[j,k,l]=1
-        the606060_cell.append(the606060)
-# If a point of (x,y,z) is judged to be inside the
-# Gyroid surface, the the value in the resulting matrix
-# is changed to 1, otherwise remains 0.
-    the606060_cell=np.asarray(the606060_cell)
+        v=createv_2(data0,sizeofdata0,accu,3)
+        ov=oo+v
+        the606060.append(ov)
+    the606060_cell=np.asarray(the606060)
+    the606060_cell=np.where(the606060_cell<0.9,1,0)
     return the606060_cell
+
+matrix=matrix.reshape(len(matrix),12,12,12)
+input_=[]
+for i in range(len(matrix)):
+    temp_x=matrix[i]
+    xx=density(temp_x)
+    input_.append(xx)
+matrix2=np.array(input_)
+matrix60=To60(matrix2)
+mean_try=np.mean(matrix60.reshape(len(matrix60),60*60*60),axis=1)
 
 def rejSampling(gm, n_samples, target):
     target_upper=1.05*target
@@ -350,34 +332,27 @@ def rejSampling(gm, n_samples, target):
         Y_max_idx=np.argmax(Y_new)
         Y_max=Y_new.iloc[Y_max_idx]
     print('the max yield for E = {} is {}, sampling start!'.format(target, Y_max))
-    batchsize = 20
+    batchsize = b_size
     sample_z = gm.sample(n_samples)[0]
     sample_target=[]
     sample_Y=[]
     print('decoding started...')
     for i in tqdm(range(0, n_samples, batchsize)): 
       temp_s0=Structure(sample_z[i:i+batchsize],decoder)
-      temp=[]
-      temp_s60=[]
+      temp_s3=[]
       for i in range(len(temp_s0)):
-          x=density(temp_s0[i])
-          x1=density12(x)
-          temp.append(x1)
-          temp_s60.append(x)
-      temp_s=np.asarray(temp)
-      temp_s60=np.asarray(temp_s60)
-      temp_s60=To60(temp_s60)
+          temp_x=density(temp_s0[i])
+          temp_s3.append(temp_x)
+      temp_s=np.asarray(temp_s3)
+      temp_s3=np.asarray(temp_s3)
+      temp_s60=To60(temp_s3)
       temp_E=[]
       temp_E=ensemble_predict_E(temp_s60)
       try:
         E_target=temp_E['E'][temp_E['E']<target_upper]
         E_target=E_target[E_target>target_lower]
         sample_=temp_s[E_target.index]
-        sample_60=[]
-        for i in range(len(sample_)):
-            x=density(sample_[i])
-            sample_60.append(x)
-        sample_60=np.asarray(sample_60)
+        sample_60=np.asarray(sample_)
         sample_60=To60(sample_60)
         uniform_rand = np.random.uniform(size=len(sample_))
         uniform_Y = up*Y_max + uniform_rand*(1-up)*Y_max
@@ -406,29 +381,19 @@ def rejSampling(gm, n_samples, target):
       sample_S_final=[]
     return sample_S_final, sample_Y_final
 
-#Choose a elastic modulus target, such as target = 2500 MPa
-target = 2500
-target_upper=1.05*target
-target_lower=0.95*target
-sam_=1000#Sampling number
-up=0.8
+###main
 sample_S, sample_Y = rejSampling(gm, n_samples=sam_, target=target)
-np.argmax(sample_Y['Y'])
 if len(sample_S)>1000:
     top=1000
     ind = np.argpartition(sample_Y, -top)[-top:]
     sample_S=sample_S[ind]
-matrix333=[]
-for i in sample_S:
-  matrix333.append(density(i))
-matrix333=np.asarray(matrix333)#Matrices that meet the requirements
 sample_Y.columns=['yield']#Corresponding yield strength
-matrix333=matrix333.reshape(len(matrix333),27)
-x=np.unique(matrix333,axis=0)
+matrix333=sample_S.reshape(len(sample_S),27)
+matrix_x=np.unique(matrix333,axis=0)
 for i in range(27):
-    x=x[(x[:,i]>0)&(x[:,i]<0.9)]
-x=x.reshape(len(x),3,3,3,1)
-X60=To60(x)
+    matrix_x=matrix_x[(matrix_x[:,i]>0)&(matrix_x[:,i]<0.9)]
+matrix_x=matrix_x.reshape(len(matrix_x),3,3,3,1)
+X60=To60(matrix_x)
 pred_E=ensemble_predict_E(X60)
 pred_Y=ensemble_predict_Y(X60)
 pred_E=np.asarray(pred_E)
@@ -436,9 +401,9 @@ pred_Y=np.asarray(pred_Y)
 pred_Y=pred_Y.reshape(-1)
 
 #Pick the matrices with the highest yield strength
-top=20 
+top=20
 ind = np.argpartition(pred_Y, -top)[-top:]
-matrix_20=x[ind]#Top 20 porosity matrices
+matrix_20=matrix_x[ind]#Top 20 porosity matrices
 Y_20=pred_Y[ind]#Corresponding yield strength
 E_20=pred_E[ind]#Corresponding elastic modulus
 np.save('results/PorosityMatrices_top20.npy',matrix_20,allow_pickle=True)#Save top 20 porosity matrices and use Matlab to generate STL file for finite element simulation.
