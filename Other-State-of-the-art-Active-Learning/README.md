@@ -7,7 +7,7 @@ You can install the required dependencies with the following code.
 ```shell
 pip install bayes_opt 
 ```
-## Demo
+## Pipeline
 1. Train 3D-CNN models as surrogate models of the Bayesian-optimization-based active learning, please run the following line in terminal:
 
 ```shell
