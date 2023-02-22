@@ -1,11 +1,18 @@
 # Bayesian-optimization-based active learning pipeline
 
-## Installation
+## Requirements
 
-You can install the required dependencies with the following code.
+The codes are tested on Ubuntu 18.04, CUDA 11.4 with the following packages:
 
 ```shell
-pip install bayes_opt 
+bayesian-optimization == 1.2.0
+tensorflow-gpu == 2.5.0
+keras == 2.3.1
+tqdm == 4.59.0
+scipy == 1.6.2
+numpy == 1.19.2
+pandas == 1.2.4
+```
 ```
 ## Pipeline
 1. Train 3D-CNN models as surrogate models of the Bayesian-optimization-based active learning, please run the following line in terminal:
