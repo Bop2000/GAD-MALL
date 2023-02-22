@@ -17,7 +17,6 @@ scipy == 1.7.0
 numpy == 1.20.2
 ```
 
-**Note:** The graph classification tasks can be executed without torch-geometric (PyG). 
 
 ## Installation
 
