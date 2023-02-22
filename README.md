@@ -16,3 +16,55 @@ tensorboad == 2.5.0
 scipy == 1.7.0
 numpy == 1.20.2
 ```
+
+**Note:** The graph classification tasks can be executed without torch-geometric (PyG). 
+
+## Installation
+
+You can install the required dependencies with the following code.
+
+```shell
+conda create -n ESGNN python=3.8
+conda activate ESGNN
+conda install pytorch=1.9.0 cudatoolkit=11.1 -c pytorch -c conda-forge --yes
+pip install tensorboard=2.5.0
+CUDA=cu111
+TORCH=1.9.0
+pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-${TORCH}+${CUDA}.html 
+pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-${TORCH}+${CUDA}.html 
+pip install torch-geometric==1.7.2 
+```
+
+## Demo
+
+For graph classification on `MUTAG` dataset, run the following line in terminal:
+
+```shell
+bash run_mutag.sh
+```
+
+For graph classification on `COLLAB` dataset, run the following line in terminal:
+
+```shell
+bash run_collab.sh
+```
+
+For node classification on `Cora` dataset, run the following line in terminal:
+
+```shell
+bash run_cora.sh
+```
+
+**Note:** The code for graph classification simulation provided in this demo is the same with that using the random resistive memory hardware. The only difference is the weight multiplication function `WeightMultiplication` performs hardware calls to a Xilinx FPGA in the customized system via [`pynq.dma`](https://pynq.readthedocs.io/en/v2.5/pynq_libraries/dma.html).
+
+## Dataset
+
+Both the processed `MUTAG` and `COLLAB` datasets are provided in `data` folder. The raw data can be downloaded [here](https://drive.google.com/file/d/1BfmD4bsPS2hG5zm7XGLHc8lpUN_WqhgV/view?usp=share_link).
+
+## CItation
+
+If you find this work interesting, welcome to cite our paper!
+
+```
+
+```
