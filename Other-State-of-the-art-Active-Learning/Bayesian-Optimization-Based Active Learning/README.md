@@ -13,7 +13,7 @@ scipy == 1.6.2
 numpy == 1.19.2
 pandas == 1.2.4
 ```
-```
+
 ## Pipeline
 1. Train 3D-CNN models as surrogate models of the Bayesian-optimization-based active learning, please run the following line in terminal:
 
