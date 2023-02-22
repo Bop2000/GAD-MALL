@@ -37,23 +37,12 @@ pip install torch-geometric==1.7.2
 
 ## Demo
 
-For graph classification on `MUTAG` dataset, run the following line in terminal:
+To search for high-performance architected materials with specific elastic modulus and high yield strength using GAD-MALL, please run the following line in terminal:
 
 ```shell
-bash run_mutag.sh
+bash run_GAD_MALL.sh
 ```
 
-For graph classification on `COLLAB` dataset, run the following line in terminal:
-
-```shell
-bash run_collab.sh
-```
-
-For node classification on `Cora` dataset, run the following line in terminal:
-
-```shell
-bash run_cora.sh
-```
 
 **Note:** The code for graph classification simulation provided in this demo is the same with that using the random resistive memory hardware. The only difference is the weight multiplication function `WeightMultiplication` performs hardware calls to a Xilinx FPGA in the customized system via [`pynq.dma`](https://pynq.readthedocs.io/en/v2.5/pynq_libraries/dma.html).
 
