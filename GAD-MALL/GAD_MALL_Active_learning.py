@@ -89,7 +89,7 @@ def Structure(x1,decoder):
   return new_x1
 
 def ensemble_predict_E(S):
-    modelname = "3dCNN_E.h5"
+    modelname = "model/3dCNN_E.h5"
     model_E = keras.models.load_model(modelname)
     E=model_E.predict(S)
     E=pd.DataFrame(E)
@@ -97,7 +97,7 @@ def ensemble_predict_E(S):
     return E               
 
 def ensemble_predict_Y(S):
-    modelname = "3dCNN_Y.h5"
+    modelname = "model/3dCNN_Y.h5"
     model_Y = keras.models.load_model(modelname)
     Y=model_Y.predict(S)
     Y=pd.DataFrame(Y)
