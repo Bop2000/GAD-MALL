@@ -55,8 +55,8 @@ python 3D_CNN.py
 ```shell
 bash run_GAD_MALL.sh
 ```
-4. After completing GAD-MALL process, you'll obtain porosity matrices with specific predicted elastic modulus (E=2500 MPa, E=5000 MPa) and the highest predicted yield strength. You can use these matrices to generate TPMS-Gyroid scaffolds. For more about `TPMS-Gyroid Structure Generation`, see code and `README` in folder `TPMS-Gyroid-Generate-by-MATLAB`
-5. Conduct Finite Element Method (FEM) analysis of the TPMS-Gyroid scaffolds using ABAQUS (or other software capable of mechanical simulation). For more about `Finite Element Method`, see code and `README` in folder `Finite Element Method by ABAQUS`
+4. After completing the GAD-MALL process, you'll obtain porosity matrices with specific predicted elastic modulus (E=2500 MPa, E=5000 MPa) and the highest predicted yield strength. You can use these matrices to generate TPMS-Gyroid scaffolds. For more about `TPMS-Gyroid Structure Generation`, see code and `README` in folder `TPMS-Gyroid-Generate-by-MATLAB`
+5. Conduct Finite Element Method (FEM) analysis of the TPMS-Gyroid scaffolds using ABAQUS (or other software capable of mechanical simulation). For more about the `Finite Element Method`, see code and `README` in the folder `Finite Element Method by ABAQUS`. Moreover, to automate the pipeline of FEM (Matlab for Gyroid structures generation in STL format → Hypermesh draw the mesh in .inp format → Abaqus conduct FEM analysis and output a .odb file for further calculation of mechanical properties), see code and `README` in the folder `FEM_automation`.
 6. Once you've combined the new mechanical property data from FEM results with your initial dataset in the `Datasets` folder, return to step 2 and run the `3D_CNN.py` Python code again to update your surrogate models. Continue this active learning loop until you find Gyroid porosity matrices with promising mechanical properties.
 
 ## More
