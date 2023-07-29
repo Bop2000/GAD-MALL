@@ -1,0 +1,112 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.ModelFromInputFile(inputFileName=
+    'X:/Users/Administrator/Desktop/5mm/abaqusModel18.inp', name=
+    'abaqusModel8')
+mdb.models['abaqusModel8'].Material(name='Material-1')
+mdb.models['abaqusModel8'].materials['Material-1'].Density(table=((7140, ), ))
+mdb.models['abaqusModel8'].materials['Material-1'].Elastic(table=((
+    30000000000.0, 0.25), ))
+mdb.models['abaqusModel8'].materials['Material-1'].Plastic(table=((118000000.0, 
+    0.0), (125000000.0, 0.003), (130000000.0, 0.006), (134000000.0, 0.009), (
+    137000000.0, 0.012), (139000000.0, 0.015), (141000000.0, 0.018), (
+    143000000.0, 0.024), (145000000.0, 0.036), (146000000.0, 0.042), (
+    148000000.0, 0.048), (149000000.0, 0.054), (150000000.0, 0.084), (151.0, 
+    0.118)))
+mdb.models['abaqusModel8'].materials['Material-1'].DuctileDamageInitiation(
+    table=((0.12, 0.33, 0.0), ))
+mdb.models['abaqusModel8'].materials['Material-1'].ductileDamageInitiation.DamageEvolution(
+    table=((0.12, ), ), type=DISPLACEMENT)
+mdb.models['abaqusModel8'].HomogeneousSolidSection(material='Material-1', name=
+    'Gyroid', thickness=None)
+mdb.models['abaqusModel8'].parts['PART-1'].Set(elements=
+    mdb.models['abaqusModel8'].parts['PART-1'].elements, name='Gyroid')
+mdb.models['abaqusModel8'].parts['PART-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['abaqusModel8'].parts['PART-1'].sets['Gyroid'], sectionName=
+    'Gyroid', thicknessAssignment=FROM_SECTION)
+mdb.models['abaqusModel8'].ConstrainedSketch(name='__profile__', sheetSize=
+    200.0)
+mdb.models['abaqusModel8'].sketches['__profile__'].CircleByCenterPerimeter(
+    center=(0.0, 0.0), point1=(5.0, 0.0))
+mdb.models['abaqusModel8'].Part(dimensionality=THREE_D, name='Round', type=
+    DISCRETE_RIGID_SURFACE)
+mdb.models['abaqusModel8'].parts['Round'].BaseSolidExtrude(depth=2.0, sketch=
+    mdb.models['abaqusModel8'].sketches['__profile__'])
+del mdb.models['abaqusModel8'].sketches['__profile__']
+mdb.models['abaqusModel8'].parts['Round'].RemoveCells(cellList=
+    mdb.models['abaqusModel8'].parts['Round'].cells.getSequenceFromMask(mask=(
+    '[#1 ]', ), ))
+mdb.models['abaqusModel8'].parts['Round'].ReferencePoint(point=(0.0, 0.0, 0.0))
+mdb.models['abaqusModel8'].parts['Round'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=1.4)
+mdb.models['abaqusModel8'].parts['Round'].generateMesh()
+mdb.models['abaqusModel8'].rootAssembly.regenerate()
+mdb.models['abaqusModel8'].rootAssembly.Instance(dependent=ON, name='Round-1', 
+    part=mdb.models['abaqusModel8'].parts['Round'])
+mdb.models['abaqusModel8'].rootAssembly.Instance(dependent=ON, name='Round-2', 
+    part=mdb.models['abaqusModel8'].parts['Round'])
+mdb.models['abaqusModel8'].rootAssembly.translate(instanceList=('Round-2', ), 
+    vector=(0.0, 0.0, -2.0))
+mdb.models['abaqusModel8'].rootAssembly.translate(instanceList=('Round-1', ), 
+    vector=(0.0, 0.0, 6.0))
+mdb.models['abaqusModel8'].rootAssembly.translate(instanceList=('PART-1-1', ), 
+    vector=(-3.0, -3.0, 0.0))
+mdb.models['abaqusModel8'].ExplicitDynamicsStep(improvedDtMethod=ON, name=
+    'Step-1', previous='Initial', timePeriod=3.0)
+mdb.models['abaqusModel8'].steps['Step-1'].setValues(improvedDtMethod=ON, 
+    massScaling=((SEMI_AUTOMATIC, MODEL, AT_BEGINNING, 100.0, 0.0, None, 0, 0, 
+    0.0, 0.0, 0, None), ))
+mdb.models['abaqusModel8'].FieldOutputRequest(createStepName='Step-1', name=
+    'F-Output-2', variables=('U', 'V', 'A', 'RF', 'RT'))
+mdb.models['abaqusModel8'].ContactProperty('IntProp-1')
+mdb.models['abaqusModel8'].interactionProperties['IntProp-1'].TangentialBehavior(
+    dependencies=0, directionality=ISOTROPIC, elasticSlipStiffness=None, 
+    formulation=PENALTY, fraction=0.005, maximumElasticSlip=FRACTION, 
+    pressureDependency=OFF, shearStressLimit=None, slipRateDependency=OFF, 
+    table=((0.125, ), ), temperatureDependency=OFF)
+mdb.models['abaqusModel8'].ContactExp(createStepName='Step-1', name='Int-1')
+mdb.models['abaqusModel8'].interactions['Int-1'].includedPairs.setValuesInStep(
+    stepName='Step-1', useAllstar=ON)
+mdb.models['abaqusModel8'].interactions['Int-1'].contactPropertyAssignments.appendInStep(
+    assignments=((GLOBAL, SELF, 'IntProp-1'), ), stepName='Step-1')
+mdb.models['abaqusModel8'].rootAssembly.Set(name='Set-2', referencePoints=(
+    mdb.models['abaqusModel8'].rootAssembly.instances['Round-2'].referencePoints[3], 
+    ))
+mdb.models['abaqusModel8'].DisplacementBC(amplitude=UNSET, createStepName=
+    'Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None
+    , name='BC-1', region=mdb.models['abaqusModel8'].rootAssembly.sets['Set-2']
+    , u1=0.0, u2=0.0, u3=0.0, ur1=0.0, ur2=0.0, ur3=0.0)
+mdb.models['abaqusModel8'].TabularAmplitude(data=((0.0, 0.0), (3.0, 1.0)), 
+    name='Amp-1', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['abaqusModel8'].rootAssembly.Set(name='Set-3', referencePoints=(
+    mdb.models['abaqusModel8'].rootAssembly.instances['Round-1'].referencePoints[3], 
+    ))
+mdb.models['abaqusModel8'].DisplacementBC(amplitude='Amp-1', createStepName=
+    'Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None
+    , name='BC-2', region=mdb.models['abaqusModel8'].rootAssembly.sets['Set-3']
+    , u1=0.0, u2=0.0, u3=-2.0, ur1=0.0, ur2=0.0, ur3=0.0)
+mdb.models['abaqusModel8'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=40)
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='abaqusModel8', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='abaqusModel18', nodalOutputPrecision=
+    SINGLE, numCpus=6, numDomains=6, parallelizationMethodExplicit=DOMAIN, 
+    queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine=''
+    , waitHours=0, waitMinutes=0)
+mdb.jobs['abaqusModel18'].submit(consistencyChecking=OFF)
+mdb.jobs['abaqusModel18'].waitForCompletion()
+#* ipc_CONNECTION_BROKEN

@@ -1,0 +1,1670 @@
+1
+
+   Abaqus 3DEXPERIENCE R2018x                                  Date 04-8ÔÂ-2021   Time 13:07:25
+   For use by Supplied by Team-SolidSQUAD under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine DESKTOP-C991D23 
+                          you are authorized to run
+                          Abaqus/Explicit until 31-Dec-2055
+
+                          Your site id is:  
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      http://www.3ds.com/products/simulia/locations/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *               Abaqus 3DEXPERIENCE R2018x                * 
+                *                                                         * 
+                *          BUILD ID: 2017_11_08-01.21.41 127140           * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release 3DEXPERIENCE R2018x manuals                    * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+  *Node
+  *Element, type=C3D8R
+  *Elset, elset=ASSEMBLY_PART-1-1_GYROID
+  *Node
+  *Element, type=R3D4
+  *Element, type=R3D3
+  *Element, type=R3D4
+  *Element, type=R3D3
+  *Element, type=R3D4
+  *Nset, nset=ASSEMBLY_ROUND-1_ROUND-REFPT_
+  *Elset, elset=ASSEMBLY_ROUND-1_ROUND
+  *Node
+  *Element, type=R3D4
+  *Element, type=R3D3
+  *Element, type=R3D4
+  *Element, type=R3D3
+  *Element, type=R3D4
+  *Nset, nset=ASSEMBLY_ROUND-2_ROUND-REFPT_
+  *Elset, elset=ASSEMBLY_ROUND-2_ROUND
+  *Nset, nset=ASSEMBLY_SET-2
+  *Nset, nset=ASSEMBLY_SET-3
+  *Elset, elset=ASSEMBLY_AUTO
+  *material, name=MATERIAL-1
+  *damageinitiation, criterion=DUCTILE
+  *damageevolution, type=DISPLACEMENT
+  *density
+  *elastic
+  *plastic
+  *solidsection, elset=ASSEMBLY_PART-1-1_GYROID, material=MATERIAL-1
+  *solidsection, elset=ASSEMBLY_PART-1-1_GYROID, material=MATERIAL-1
+  *rigidbody, refnode=ASSEMBLY_ROUND-1_ROUND-REFPT_, elset=ASSEMBLY_ROUND-1_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-2_ROUND-REFPT_, elset=ASSEMBLY_ROUND-2_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-1_ROUND-REFPT_, elset=ASSEMBLY_ROUND-1_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-2_ROUND-REFPT_, elset=ASSEMBLY_ROUND-2_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-1_ROUND-REFPT_, elset=ASSEMBLY_ROUND-1_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-2_ROUND-REFPT_, elset=ASSEMBLY_ROUND-2_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-1_ROUND-REFPT_, elset=ASSEMBLY_ROUND-1_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-2_ROUND-REFPT_, elset=ASSEMBLY_ROUND-2_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-1_ROUND-REFPT_, elset=ASSEMBLY_ROUND-1_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-2_ROUND-REFPT_, elset=ASSEMBLY_ROUND-2_ROUND
+  *surfaceinteraction, name=INTPROP-1
+  *friction
+  *rigidbody, refnode=ASSEMBLY_ROUND-1_ROUND-REFPT_, elset=ASSEMBLY_ROUND-1_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-2_ROUND-REFPT_, elset=ASSEMBLY_ROUND-2_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-1_ROUND-REFPT_, elset=ASSEMBLY_ROUND-1_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-2_ROUND-REFPT_, elset=ASSEMBLY_ROUND-2_ROUND
+  *boundary
+  *boundary, amplitude=AMP-1
+  *solidsection, elset=ASSEMBLY_PART-1-1_GYROID, material=MATERIAL-1
+  *rigidbody, refnode=ASSEMBLY_ROUND-1_ROUND-REFPT_, elset=ASSEMBLY_ROUND-1_ROUND
+  *rigidbody, refnode=ASSEMBLY_ROUND-2_ROUND-REFPT_, elset=ASSEMBLY_ROUND-2_ROUND
+  *friction
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 1446 elements are distorted. Either the isoparametric angles are 
+             out of the suggested limits or the triangular or tetrahedral 
+             quality measure is bad. The elements have been identified in 
+             element set WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted isoparametric elements
+  
+      Element        Min/max angle   Adjusted nodes 
+ ------------------ ---------------- -------------- 
+    PART-1-1.112069          25.7932       NO       
+    PART-1-1.112092          30.3944       NO       
+    PART-1-1.112094          27.2343       NO       
+    PART-1-1.112128          44.4816       NO       
+    PART-1-1.112146          29.6154       NO       
+    PART-1-1.112149          26.0294       NO       
+    PART-1-1.112156           44.769       NO       
+    PART-1-1.112157          40.2734       NO       
+    PART-1-1.112161          38.7091       NO       
+    PART-1-1.112177          30.0905       NO       
+    PART-1-1.112178          42.3039       NO       
+    PART-1-1.112179          35.5519       NO       
+    PART-1-1.112197          44.5476       NO       
+    PART-1-1.112198           37.275       NO       
+    PART-1-1.112208          44.1593       NO       
+    PART-1-1.112253          44.2204       NO       
+    PART-1-1.112293          43.5777       NO       
+    PART-1-1.112310          44.8574       NO       
+    PART-1-1.112322          43.4895       NO       
+    PART-1-1.112323           41.394       NO       
+    PART-1-1.112335          35.0737       NO       
+    PART-1-1.112339          22.3501       NO       
+    PART-1-1.112350           38.453       NO       
+    PART-1-1.112365          37.2076       NO       
+    PART-1-1.112368          43.8573       NO       
+    PART-1-1.112369          24.4169       NO       
+    PART-1-1.112410          44.2734       NO       
+    PART-1-1.112416          43.6513       NO       
+    PART-1-1.112417          42.9387       NO       
+    PART-1-1.112425          36.7778       NO       
+    PART-1-1.112430          39.1972       NO       
+    PART-1-1.112436          36.1365       NO       
+    PART-1-1.112450          37.0855       NO       
+    PART-1-1.112451          43.8363       NO       
+    PART-1-1.112452          43.5376       NO       
+    PART-1-1.112453          31.6368       NO       
+    PART-1-1.112472          41.8509       NO       
+    PART-1-1.112476          35.7026       NO       
+    PART-1-1.112490          41.7625       NO       
+    PART-1-1.112492          31.7845       NO       
+    PART-1-1.112495          30.9984       NO       
+    PART-1-1.112506          31.9167       NO       
+    PART-1-1.112509          27.8135       NO       
+    PART-1-1.112524          41.9623       NO       
+    PART-1-1.112531          42.9456       NO       
+    PART-1-1.112542          38.7791       NO       
+    PART-1-1.112548          44.4672       NO       
+    PART-1-1.112604          43.1843       NO       
+    PART-1-1.112630          40.9653       NO       
+    PART-1-1.112632          41.5949       NO       
+    PART-1-1.112635          39.0659       NO       
+    PART-1-1.112637          32.3371       NO       
+    PART-1-1.112643            34.27       NO       
+    PART-1-1.112644          23.4653       NO       
+    PART-1-1.112652          37.4701       NO       
+    PART-1-1.112653          23.6178       NO       
+    PART-1-1.112661          44.8613       NO       
+    PART-1-1.112662          32.6098       NO       
+    PART-1-1.112666          25.2971       NO       
+    PART-1-1.112669          35.5098       NO       
+    PART-1-1.112677          42.6475       NO       
+    PART-1-1.112681           36.089       NO       
+    PART-1-1.112693          41.9345       NO       
+    PART-1-1.112697          33.7071       NO       
+    PART-1-1.112699           43.153       NO       
+    PART-1-1.112700           20.387       NO       
+    PART-1-1.112702          43.3138       NO       
+    PART-1-1.112703          24.7815       NO       
+    PART-1-1.112724          43.1523       NO       
+    PART-1-1.112730          36.9645       NO       
+    PART-1-1.112760          29.6156       NO       
+    PART-1-1.112763          27.5902       NO       
+    PART-1-1.112811          43.8658       NO       
+    PART-1-1.112850           44.183       NO       
+    PART-1-1.112904          44.0076       NO       
+    PART-1-1.112916          43.4304       NO       
+    PART-1-1.112918          40.6955       NO       
+    PART-1-1.112946            42.79       NO       
+    PART-1-1.112947          26.2113       NO       
+    PART-1-1.112955          39.7317       NO       
+    PART-1-1.112956           30.198       NO       
+    PART-1-1.112958          42.4042       NO       
+    PART-1-1.112960          44.1648       NO       
+    PART-1-1.112979          37.7359       NO       
+    PART-1-1.112981          43.7355       NO       
+    PART-1-1.112984          37.0374       NO       
+    PART-1-1.113002          40.7854       NO       
+    PART-1-1.113010          44.0074       NO       
+    PART-1-1.113060          40.9737       NO       
+    PART-1-1.113071          34.7025       NO       
+    PART-1-1.113097          41.2622       NO       
+    PART-1-1.113134          35.6904       NO       
+    PART-1-1.113170          44.4684       NO       
+    PART-1-1.113212          35.8479       NO       
+    PART-1-1.113214          44.7096       NO       
+    PART-1-1.113216          41.8802       NO       
+    PART-1-1.113217          44.1347       NO       
+    PART-1-1.113225          43.4905       NO       
+    PART-1-1.113259           38.743       NO       
+    PART-1-1.113315          36.2529       NO       
+    PART-1-1.113321          35.3806       NO       
+    PART-1-1.113322          43.8996       NO       
+    PART-1-1.113327          40.7686       NO       
+    PART-1-1.113330          41.4663       NO       
+    PART-1-1.113332          40.0829       NO       
+    PART-1-1.113336          43.0141       NO       
+    PART-1-1.113337          43.3102       NO       
+    PART-1-1.113353          42.0648       NO       
+    PART-1-1.113363           41.166       NO       
+    PART-1-1.113387          33.6527       NO       
+    PART-1-1.113394          36.8617       NO       
+    PART-1-1.113395          41.3662       NO       
+    PART-1-1.113398          38.8864       NO       
+    PART-1-1.113408          38.3455       NO       
+    PART-1-1.113426          40.7273       NO       
+    PART-1-1.113438          38.3096       NO       
+    PART-1-1.113440          42.5619       NO       
+    PART-1-1.113442          42.2538       NO       
+    PART-1-1.113448          42.9953       NO       
+    PART-1-1.113458          41.3736       NO       
+    PART-1-1.113464          42.4755       NO       
+    PART-1-1.113477          36.1321       NO       
+    PART-1-1.113481          41.1591       NO       
+    PART-1-1.113489          42.1622       NO       
+    PART-1-1.113490          34.9507       NO       
+    PART-1-1.113514          37.0343       NO       
+    PART-1-1.113518          42.3365       NO       
+    PART-1-1.113521          40.9601       NO       
+    PART-1-1.113523          42.2509       NO       
+    PART-1-1.113533          42.9266       NO       
+    PART-1-1.113554          38.5476       NO       
+    PART-1-1.113582          42.6303       NO       
+    PART-1-1.113585          38.7606       NO       
+    PART-1-1.113588           44.875       NO       
+    PART-1-1.113590          27.2324       NO       
+    PART-1-1.113591          29.7184       NO       
+    PART-1-1.113599           42.494       NO       
+    PART-1-1.113609          30.6081       NO       
+    PART-1-1.113610          31.5421       NO       
+    PART-1-1.113621          39.6478       NO       
+    PART-1-1.113632          43.1984       NO       
+    PART-1-1.113645          40.2266       NO       
+    PART-1-1.113656          41.3926       NO       
+    PART-1-1.113670          41.5631       NO       
+    PART-1-1.113691          43.4617       NO       
+    PART-1-1.113735          37.4544       NO       
+    PART-1-1.113756          40.7574       NO       
+    PART-1-1.113760          40.0819       NO       
+    PART-1-1.113761          41.4184       NO       
+    PART-1-1.113769           33.427       NO       
+    PART-1-1.113773          38.6711       NO       
+    PART-1-1.113776          42.1199       NO       
+    PART-1-1.113802          41.1328       NO       
+    PART-1-1.113816          35.1566       NO       
+    PART-1-1.113832          43.0946       NO       
+    PART-1-1.113854          38.7338       NO       
+    PART-1-1.113855          44.7293       NO       
+    PART-1-1.113856          44.8929       NO       
+    PART-1-1.113862          34.0692       NO       
+    PART-1-1.113879          34.8041       NO       
+    PART-1-1.113890          39.2563       NO       
+    PART-1-1.113914          42.4396       NO       
+    PART-1-1.113930          29.0887       NO       
+    PART-1-1.113978          41.9457       NO       
+    PART-1-1.113982          40.9616       NO       
+    PART-1-1.114026          40.3478       NO       
+    PART-1-1.114055          43.7656       NO       
+    PART-1-1.114065          40.1566       NO       
+    PART-1-1.114075          35.1739       NO       
+    PART-1-1.114145          41.8612       NO       
+    PART-1-1.114147          36.6068       NO       
+    PART-1-1.114167          44.1538       NO       
+    PART-1-1.114193          42.8154       NO       
+    PART-1-1.114199          39.4524       NO       
+    PART-1-1.114205          39.1419       NO       
+    PART-1-1.114209          43.0553       NO       
+    PART-1-1.114241          41.9118       NO       
+    PART-1-1.114266          44.2443       NO       
+    PART-1-1.114294          42.4378       NO       
+    PART-1-1.114298          39.8755       NO       
+    PART-1-1.114323          27.3688       NO       
+    PART-1-1.114324          26.3312       NO       
+    PART-1-1.114328          38.6112       NO       
+    PART-1-1.114329          42.0066       NO       
+    PART-1-1.114332          43.4787       NO       
+    PART-1-1.114338          27.5404       NO       
+    PART-1-1.114339          25.3949       NO       
+    PART-1-1.114348          42.0363       NO       
+    PART-1-1.114393          33.7037       NO       
+    PART-1-1.114395          43.7492       NO       
+    PART-1-1.114396          41.3052       NO       
+    PART-1-1.114416          42.1626       NO       
+    PART-1-1.114417          43.5401       NO       
+    PART-1-1.114467          41.3716       NO       
+    PART-1-1.114473          41.4535       NO       
+    PART-1-1.114490          19.7164       NO       
+    PART-1-1.114503          44.7174       NO       
+    PART-1-1.114512           38.806       NO       
+    PART-1-1.114591          44.5079       NO       
+    PART-1-1.114601          39.6867       NO       
+    PART-1-1.114647           29.546       NO       
+    PART-1-1.114649            38.88       NO       
+    PART-1-1.114650           40.824       NO       
+    PART-1-1.114678          42.6152       NO       
+    PART-1-1.114690          44.9606       NO       
+    PART-1-1.114714          44.5289       NO       
+    PART-1-1.114717          33.7209       NO       
+    PART-1-1.114720          41.4845       NO       
+    PART-1-1.114725          32.9772       NO       
+    PART-1-1.114734          44.2128       NO       
+    PART-1-1.114742          43.6219       NO       
+    PART-1-1.114778          32.3294       NO       
+    PART-1-1.114780          31.6487       NO       
+    PART-1-1.114781          40.8122       NO       
+    PART-1-1.114852          37.5704       NO       
+    PART-1-1.114888           32.321       NO       
+    PART-1-1.114890          43.1276       NO       
+    PART-1-1.114970          44.6559       NO       
+    PART-1-1.114975          43.3417       NO       
+    PART-1-1.114979          35.2304       NO       
+    PART-1-1.114982          40.1496       NO       
+    PART-1-1.115008          39.2597       NO       
+    PART-1-1.115037          44.3824       NO       
+    PART-1-1.115058          33.2361       NO       
+    PART-1-1.115060          32.0763       NO       
+    PART-1-1.115061          36.3119       NO       
+    PART-1-1.115068          30.6026       NO       
+    PART-1-1.115070          26.5832       NO       
+    PART-1-1.115071          40.5854       NO       
+    PART-1-1.115072          31.8315       NO       
+    PART-1-1.115094           39.309       NO       
+    PART-1-1.115109           40.961       NO       
+    PART-1-1.115114          32.0342       NO       
+    PART-1-1.115131          44.6297       NO       
+    PART-1-1.115149          32.5362       NO       
+    PART-1-1.115151           43.669       NO       
+    PART-1-1.115152          42.0733       NO       
+    PART-1-1.115154          44.2523       NO       
+    PART-1-1.115159          34.0414       NO       
+    PART-1-1.115186             40.9       NO       
+    PART-1-1.115195          38.5681       NO       
+    PART-1-1.115197          35.2006       NO       
+    PART-1-1.115200          40.1749       NO       
+    PART-1-1.115203          44.2647       NO       
+    PART-1-1.115210          37.3653       NO       
+    PART-1-1.115214          31.6802       NO       
+    PART-1-1.115217          39.4622       NO       
+    PART-1-1.115219          41.4868       NO       
+    PART-1-1.115223          25.3073       NO       
+    PART-1-1.115226          26.5556       NO       
+    PART-1-1.115229          34.9199       NO       
+    PART-1-1.115236          41.6067       NO       
+    PART-1-1.115238          35.9349       NO       
+    PART-1-1.115241          40.4077       NO       
+    PART-1-1.115244          44.5866       NO       
+    PART-1-1.115257          43.9935       NO       
+    PART-1-1.115279          39.4693       NO       
+    PART-1-1.115287          31.6142       NO       
+    PART-1-1.115289          30.5026       NO       
+    PART-1-1.115290          39.1786       NO       
+    PART-1-1.115291          34.9459       NO       
+    PART-1-1.115299          26.0343       NO       
+    PART-1-1.115332          32.0983       NO       
+    PART-1-1.115357          39.9437       NO       
+    PART-1-1.115371          31.9042       NO       
+    PART-1-1.115383          42.0615       NO       
+    PART-1-1.115392          30.8862       NO       
+    PART-1-1.115399          43.3406       NO       
+    PART-1-1.115403          31.2171       NO       
+    PART-1-1.115429          44.2958       NO       
+    PART-1-1.115441           44.912       NO       
+    PART-1-1.115444          33.0921       NO       
+    PART-1-1.115451          38.3138       NO       
+    PART-1-1.115452          37.7493       NO       
+    PART-1-1.115455          43.2079       NO       
+    PART-1-1.115456          39.9556       NO       
+    PART-1-1.115486          44.0218       NO       
+    PART-1-1.115498          39.2056       NO       
+    PART-1-1.115528          39.5374       NO       
+    PART-1-1.115534          43.4332       NO       
+    PART-1-1.115539          30.1854       NO       
+    PART-1-1.115540          34.1431       NO       
+    PART-1-1.115559          43.9599       NO       
+    PART-1-1.115583          39.4266       NO       
+    PART-1-1.115651          35.8054       NO       
+    PART-1-1.115686          34.2271       NO       
+    PART-1-1.115687          38.9703       NO       
+    PART-1-1.115781          44.7861       NO       
+    PART-1-1.115847          42.4107       NO       
+    PART-1-1.115852          35.3937       NO       
+    PART-1-1.115853          42.1902       NO       
+    PART-1-1.115863          43.1666       NO       
+    PART-1-1.115888            40.14       NO       
+    PART-1-1.115898          37.8062       NO       
+    PART-1-1.115910          43.6167       NO       
+    PART-1-1.115926          38.5562       NO       
+    PART-1-1.115927          42.4325       NO       
+    PART-1-1.115935          40.4176       NO       
+    PART-1-1.115936          39.4246       NO       
+    PART-1-1.115966          41.5764       NO       
+    PART-1-1.116019            27.36       NO       
+    PART-1-1.116049          42.4707       NO       
+    PART-1-1.116058          43.6249       NO       
+    PART-1-1.116061          40.3016       NO       
+    PART-1-1.116078          43.9267       NO       
+    PART-1-1.116098          34.1409       NO       
+    PART-1-1.116099          42.2794       NO       
+    PART-1-1.116109          43.1464       NO       
+    PART-1-1.116110          42.8079       NO       
+    PART-1-1.116152          44.9915       NO       
+    PART-1-1.116159          43.4446       NO       
+    PART-1-1.116167          40.1957       NO       
+    PART-1-1.116191          44.4458       NO       
+    PART-1-1.116197          34.4182       NO       
+    PART-1-1.116198          43.3277       NO       
+    PART-1-1.116203          40.5184       NO       
+    PART-1-1.116214          38.6055       NO       
+    PART-1-1.116262          44.6125       NO       
+    PART-1-1.116273          37.4818       NO       
+    PART-1-1.116293          43.0655       NO       
+    PART-1-1.116321          42.6556       NO       
+    PART-1-1.116425          43.7677       NO       
+    PART-1-1.116426          36.9705       NO       
+    PART-1-1.116496          37.4844       NO       
+    PART-1-1.116546          37.5151       NO       
+    PART-1-1.116560          43.1062       NO       
+    PART-1-1.116578           43.263       NO       
+    PART-1-1.116580          38.3667       NO       
+    PART-1-1.116584          43.4673       NO       
+    PART-1-1.116601          38.5841       NO       
+    PART-1-1.116628          41.3589       NO       
+    PART-1-1.116659          34.2275       NO       
+    PART-1-1.116681          41.5466       NO       
+    PART-1-1.116688          42.4424       NO       
+    PART-1-1.116689          37.8882       NO       
+    PART-1-1.116718          38.4886       NO       
+    PART-1-1.116721          44.0442       NO       
+    PART-1-1.116722           34.305       NO       
+    PART-1-1.116725           36.402       NO       
+    PART-1-1.116727          42.4106       NO       
+    PART-1-1.116731          38.5768       NO       
+    PART-1-1.116734          34.3853       NO       
+    PART-1-1.116760          39.6211       NO       
+    PART-1-1.116776          38.3088       NO       
+    PART-1-1.116807          43.7124       NO       
+    PART-1-1.116811          44.3015       NO       
+    PART-1-1.116819          44.6925       NO       
+    PART-1-1.116821          44.5814       NO       
+    PART-1-1.116846          37.2187       NO       
+    PART-1-1.116901           43.836       NO       
+    PART-1-1.116909          43.7635       NO       
+    PART-1-1.116950           42.469       NO       
+    PART-1-1.116954          38.0147       NO       
+    PART-1-1.116957          40.5598       NO       
+    PART-1-1.116971           38.218       NO       
+    PART-1-1.116975          40.8352       NO       
+    PART-1-1.117004          44.3146       NO       
+    PART-1-1.117033          39.5048       NO       
+    PART-1-1.117066          39.3121       NO       
+    PART-1-1.117110          44.4209       NO       
+    PART-1-1.117198          34.6329       NO       
+    PART-1-1.117220          33.1601       NO       
+    PART-1-1.117237          44.7731       NO       
+    PART-1-1.117371          43.6122       NO       
+    PART-1-1.117385          44.7207       NO       
+    PART-1-1.117393          43.9305       NO       
+    PART-1-1.117394          39.8065       NO       
+    PART-1-1.117425          40.2293       NO       
+    PART-1-1.117430          40.4403       NO       
+    PART-1-1.117441          35.5035       NO       
+    PART-1-1.117443           36.147       NO       
+    PART-1-1.117460          41.1728       NO       
+    PART-1-1.117477           40.554       NO       
+    PART-1-1.117479          41.4191       NO       
+    PART-1-1.117494          44.6435       NO       
+    PART-1-1.117508          43.3423       NO       
+    PART-1-1.117512          43.4356       NO       
+    PART-1-1.117515          32.9893       NO       
+    PART-1-1.117547          44.2031       NO       
+    PART-1-1.117550          38.2124       NO       
+    PART-1-1.117551          43.0904       NO       
+    PART-1-1.117566          39.5375       NO       
+    PART-1-1.117639          42.0383       NO       
+    PART-1-1.117640          38.2117       NO       
+    PART-1-1.117641          35.5304       NO       
+    PART-1-1.117653          41.0001       NO       
+    PART-1-1.117677          39.9405       NO       
+    PART-1-1.117679          37.7208       NO       
+    PART-1-1.117681          39.2639       NO       
+    PART-1-1.117689          44.3028       NO       
+    PART-1-1.117691          43.1591       NO       
+    PART-1-1.117693          38.4371       NO       
+    PART-1-1.117714          44.4197       NO       
+    PART-1-1.117716          42.5281       NO       
+    PART-1-1.117748          29.8032       NO       
+    PART-1-1.117768          42.1428       NO       
+    PART-1-1.117777          39.9565       NO       
+    PART-1-1.117778          42.7602       NO       
+    PART-1-1.117781          42.6133       NO       
+    PART-1-1.117801          39.9831       NO       
+    PART-1-1.117804          33.7507       NO       
+    PART-1-1.117863          36.6117       NO       
+    PART-1-1.117880          23.7615       NO       
+    PART-1-1.117883          11.9008       NO       
+    PART-1-1.117919          38.1978       NO       
+    PART-1-1.117923          39.5188       NO       
+    PART-1-1.117925          41.2294       NO       
+    PART-1-1.117984          41.4436       NO       
+    PART-1-1.117987          38.1824       NO       
+    PART-1-1.118006          44.7675       NO       
+    PART-1-1.118029          35.8007       NO       
+    PART-1-1.118071          41.4619       NO       
+    PART-1-1.118084          44.6124       NO       
+    PART-1-1.118129          39.9757       NO       
+    PART-1-1.118160           44.972       NO       
+    PART-1-1.118264          39.4016       NO       
+    PART-1-1.118293          39.8559       NO       
+    PART-1-1.118325          40.5665       NO       
+    PART-1-1.118364          44.8544       NO       
+    PART-1-1.118374          44.2341       NO       
+    PART-1-1.118386          42.0558       NO       
+    PART-1-1.118388           39.377       NO       
+    PART-1-1.118401          44.8332       NO       
+    PART-1-1.118427          43.4163       NO       
+    PART-1-1.118448          44.1432       NO       
+    PART-1-1.118456          31.7174       NO       
+    PART-1-1.118466          38.2188       NO       
+    PART-1-1.118499          38.5236       NO       
+    PART-1-1.118502          41.5632       NO       
+    PART-1-1.118503          44.7686       NO       
+    PART-1-1.118515          39.7626       NO       
+    PART-1-1.118517          44.4397       NO       
+    PART-1-1.118574          35.9656       NO       
+    PART-1-1.118588          43.0883       NO       
+    PART-1-1.118590          38.6044       NO       
+    PART-1-1.118639          35.8691       NO       
+    PART-1-1.118646          38.8769       NO       
+    PART-1-1.118678          41.8878       NO       
+    PART-1-1.118679           39.373       NO       
+    PART-1-1.118714          41.1801       NO       
+    PART-1-1.118720          36.0812       NO       
+    PART-1-1.118721          37.7067       NO       
+    PART-1-1.118727           43.168       NO       
+    PART-1-1.118731          41.2681       NO       
+    PART-1-1.118802          42.2151       NO       
+    PART-1-1.118818          41.4546       NO       
+    PART-1-1.118866          39.8054       NO       
+    PART-1-1.118875          33.1027       NO       
+    PART-1-1.118896          44.1096       NO       
+    PART-1-1.118897          35.3267       NO       
+    PART-1-1.118902          44.0754       NO       
+    PART-1-1.118934          39.0794       NO       
+    PART-1-1.118955          34.8047       NO       
+    PART-1-1.118959          29.0575       NO       
+    PART-1-1.118962          44.5103       NO       
+    PART-1-1.118968          43.9776       NO       
+    PART-1-1.118981          42.4693       NO       
+    PART-1-1.118982          38.7226       NO       
+    PART-1-1.119003          34.1167       NO       
+    PART-1-1.119010          42.8009       NO       
+    PART-1-1.119023          36.4388       NO       
+    PART-1-1.119035          42.5737       NO       
+    PART-1-1.119039          31.4177       NO       
+    PART-1-1.119042          40.6662       NO       
+    PART-1-1.119055          41.5333       NO       
+    PART-1-1.119061          28.5208       NO       
+    PART-1-1.119093          33.2043       NO       
+    PART-1-1.119127          39.4098       NO       
+    PART-1-1.119129          39.1861       NO       
+    PART-1-1.119173          39.5665       NO       
+    PART-1-1.119181          40.5411       NO       
+    PART-1-1.119194          43.2969       NO       
+    PART-1-1.119209          42.6732       NO       
+    PART-1-1.119226          42.6396       NO       
+    PART-1-1.119234          35.7165       NO       
+    PART-1-1.119242          34.1334       NO       
+    PART-1-1.119245          42.6362       NO       
+    PART-1-1.119249          33.5009       NO       
+    PART-1-1.119252          40.8154       NO       
+    PART-1-1.119256          35.3731       NO       
+    PART-1-1.119260           26.878       NO       
+    PART-1-1.119263          42.4031       NO       
+    PART-1-1.119267            34.31       NO       
+    PART-1-1.119271          25.6055       NO       
+    PART-1-1.119274          40.5891       NO       
+    PART-1-1.119286          43.9924       NO       
+    PART-1-1.119290          41.1687       NO       
+    PART-1-1.119295          44.5793       NO       
+    PART-1-1.119306          43.6593       NO       
+    PART-1-1.119310           32.204       NO       
+    PART-1-1.119313          43.2333       NO       
+    PART-1-1.119324          34.2147       NO       
+    PART-1-1.119327          44.5517       NO       
+    PART-1-1.119328          39.7746       NO       
+    PART-1-1.119353          35.7909       NO       
+    PART-1-1.119364          44.0681       NO       
+    PART-1-1.119402          38.8738       NO       
+    PART-1-1.119404          40.9016       NO       
+    PART-1-1.119438          43.2164       NO       
+    PART-1-1.119450          36.4495       NO       
+    PART-1-1.119459          44.9614       NO       
+    PART-1-1.119477          40.0047       NO       
+    PART-1-1.119496          29.6893       NO       
+    PART-1-1.119498          21.1052       NO       
+    PART-1-1.119501          21.6957       NO       
+    PART-1-1.119504          40.5663       NO       
+    PART-1-1.119517          44.8179       NO       
+    PART-1-1.119518          42.0221       NO       
+    PART-1-1.119522          34.2556       NO       
+    PART-1-1.119529          44.8241       NO       
+    PART-1-1.119533          43.6746       NO       
+    PART-1-1.119545          31.0282       NO       
+    PART-1-1.119549          37.4442       NO       
+    PART-1-1.119553          44.7592       NO       
+    PART-1-1.119566          40.8139       NO       
+    PART-1-1.119571          42.4523       NO       
+    PART-1-1.119576          42.1005       NO       
+    PART-1-1.119586          43.3667       NO       
+    PART-1-1.119590          36.0719       NO       
+    PART-1-1.119593          44.6347       NO       
+    PART-1-1.119597          43.4221       NO       
+    PART-1-1.119608          40.0807       NO       
+    PART-1-1.119655          35.8376       NO       
+    PART-1-1.119668          42.2665       NO       
+    PART-1-1.119675          43.5036       NO       
+    PART-1-1.119688           41.852       NO       
+    PART-1-1.119848           43.875       NO       
+    PART-1-1.119901           44.543       NO       
+    PART-1-1.119905          38.5145       NO       
+    PART-1-1.119927          31.4087       NO       
+    PART-1-1.119929          41.0651       NO       
+    PART-1-1.119955          38.0544       NO       
+    PART-1-1.119987          42.8518       NO       
+    PART-1-1.119988           43.866       NO       
+    PART-1-1.119990          41.1758       NO       
+    PART-1-1.119992          44.7439       NO       
+    PART-1-1.120014          43.1267       NO       
+    PART-1-1.120033          43.7453       NO       
+    PART-1-1.120094          35.1465       NO       
+    PART-1-1.120117          42.4767       NO       
+    PART-1-1.120123          41.3649       NO       
+    PART-1-1.120156          41.2169       NO       
+    PART-1-1.120195          41.3661       NO       
+    PART-1-1.120227          40.9362       NO       
+    PART-1-1.120279          44.0144       NO       
+    PART-1-1.120295          44.9245       NO       
+    PART-1-1.120386          40.8306       NO       
+    PART-1-1.120395            44.99       NO       
+    PART-1-1.120403          41.1301       NO       
+    PART-1-1.120506          40.8556       NO       
+    PART-1-1.120508          38.3882       NO       
+    PART-1-1.120569          39.7072       NO       
+    PART-1-1.120585          44.8458       NO       
+    PART-1-1.120599          42.8691       NO       
+    PART-1-1.120619          37.4024       NO       
+    PART-1-1.120648          39.7649       NO       
+    PART-1-1.120668          40.2007       NO       
+    PART-1-1.120670          41.2906       NO       
+    PART-1-1.120698          26.0116       NO       
+    PART-1-1.120726          40.4095       NO       
+    PART-1-1.120729          26.5863       NO       
+    PART-1-1.120765          31.8193       NO       
+    PART-1-1.120780          27.5507       NO       
+    PART-1-1.120811          41.4995       NO       
+    PART-1-1.120820          41.3192       NO       
+    PART-1-1.120823          43.9661       NO       
+    PART-1-1.120838          44.4877       NO       
+    PART-1-1.120842          34.2028       NO       
+    PART-1-1.120858          36.7651       NO       
+    PART-1-1.120942          42.7369       NO       
+    PART-1-1.121040          26.5171       NO       
+    PART-1-1.121056          36.9037       NO       
+    PART-1-1.121096          36.9425       NO       
+    PART-1-1.121157           42.923       NO       
+    PART-1-1.121192          38.8972       NO       
+    PART-1-1.121194          40.3178       NO       
+    PART-1-1.121264          41.9979       NO       
+    PART-1-1.121288          39.7918       NO       
+    PART-1-1.121296          35.8427       NO       
+    PART-1-1.121310          43.9961       NO       
+    PART-1-1.121320          36.4759       NO       
+    PART-1-1.121328          38.2038       NO       
+    PART-1-1.121332          38.1877       NO       
+    PART-1-1.121352          43.6744       NO       
+    PART-1-1.121363          39.4022       NO       
+    PART-1-1.121365           44.963       NO       
+    PART-1-1.121382          31.4633       NO       
+    PART-1-1.121391          31.8364       NO       
+    PART-1-1.121404          44.5406       NO       
+    PART-1-1.121419          33.0518       NO       
+    PART-1-1.121439          44.4991       NO       
+    PART-1-1.121470          24.1382       NO       
+    PART-1-1.121509          25.2452       NO       
+    PART-1-1.121526          36.2185       NO       
+    PART-1-1.121527          43.8106       NO       
+    PART-1-1.121528          39.4623       NO       
+    PART-1-1.121532          37.6311       NO       
+    PART-1-1.121549          16.9238       NO       
+    PART-1-1.121562          22.9086       NO       
+    PART-1-1.121563          38.0295       NO       
+    PART-1-1.121566          43.4088       NO       
+    PART-1-1.121567          38.8154       NO       
+    PART-1-1.121584          34.7362       NO       
+    PART-1-1.121602          44.3123       NO       
+    PART-1-1.121625          33.0825       NO       
+    PART-1-1.121628          33.9122       NO       
+    PART-1-1.121659          42.0474       NO       
+    PART-1-1.121663          33.1052       NO       
+    PART-1-1.121666          37.9889       NO       
+    PART-1-1.121668          42.6484       NO       
+    PART-1-1.121690          41.3537       NO       
+    PART-1-1.121703          40.0828       NO       
+    PART-1-1.121733          44.1492       NO       
+    PART-1-1.121750          42.4778       NO       
+    PART-1-1.121792          43.5447       NO       
+    PART-1-1.121851          40.7253       NO       
+    PART-1-1.121874          40.0143       NO       
+    PART-1-1.121875          43.4314       NO       
+    PART-1-1.121967          44.8211       NO       
+    PART-1-1.121991          44.2121       NO       
+    PART-1-1.121996           44.493       NO       
+    PART-1-1.122018           43.566       NO       
+    PART-1-1.122053          32.1402       NO       
+    PART-1-1.122105          44.2224       NO       
+    PART-1-1.122165          34.7703       NO       
+    PART-1-1.122203          34.9704       NO       
+    PART-1-1.122252           37.315       NO       
+    PART-1-1.122310          40.4349       NO       
+    PART-1-1.122333           43.722       NO       
+    PART-1-1.122337          42.9063       NO       
+    PART-1-1.122357           42.393       NO       
+    PART-1-1.122378          40.8914       NO       
+    PART-1-1.122427          35.8225       NO       
+    PART-1-1.122470          41.9221       NO       
+    PART-1-1.122583          43.8815       NO       
+    PART-1-1.122660          35.8396       NO       
+    PART-1-1.122661          37.4117       NO       
+    PART-1-1.122664          31.1154       NO       
+    PART-1-1.122667          41.4567       NO       
+    PART-1-1.122672          38.1456       NO       
+    PART-1-1.122675          32.1947       NO       
+    PART-1-1.122678          38.8441       NO       
+    PART-1-1.122801          44.8251       NO       
+    PART-1-1.122885          44.6294       NO       
+    PART-1-1.122943          39.9394       NO       
+    PART-1-1.122989           44.002       NO       
+    PART-1-1.123003          42.8567       NO       
+    PART-1-1.123027          43.0328       NO       
+    PART-1-1.123029          32.4344       NO       
+    PART-1-1.123052          43.2377       NO       
+    PART-1-1.123071          44.1262       NO       
+    PART-1-1.123092          44.5611       NO       
+    PART-1-1.123120          41.8016       NO       
+    PART-1-1.123122          42.6069       NO       
+    PART-1-1.123238          40.4574       NO       
+    PART-1-1.123309          40.4323       NO       
+    PART-1-1.123312          44.5035       NO       
+    PART-1-1.123366          44.2548       NO       
+    PART-1-1.123378          39.1362       NO       
+    PART-1-1.123393          37.1316       NO       
+    PART-1-1.123395          39.7514       NO       
+    PART-1-1.123415          40.2431       NO       
+    PART-1-1.123467          32.4524       NO       
+    PART-1-1.123636          44.4308       NO       
+    PART-1-1.123650          40.9559       NO       
+    PART-1-1.123661          42.6142       NO       
+    PART-1-1.123666          38.6748       NO       
+    PART-1-1.123718          37.0256       NO       
+    PART-1-1.123721          35.7594       NO       
+    PART-1-1.123725          39.6145       NO       
+    PART-1-1.123726          44.5776       NO       
+    PART-1-1.123727          39.5257       NO       
+    PART-1-1.123729          40.0004       NO       
+    PART-1-1.123732          40.7214       NO       
+    PART-1-1.123750          35.3196       NO       
+    PART-1-1.123761           37.961       NO       
+    PART-1-1.123794          41.6102       NO       
+    PART-1-1.123831          35.5727       NO       
+    PART-1-1.123874          43.6405       NO       
+    PART-1-1.123878          42.7151       NO       
+    PART-1-1.123919          41.7778       NO       
+    PART-1-1.123923          31.1496       NO       
+    PART-1-1.123935          36.9177       NO       
+    PART-1-1.123953          40.1681       NO       
+    PART-1-1.123963          31.2868       NO       
+    PART-1-1.123995          39.8717       NO       
+    PART-1-1.124024          41.6789       NO       
+    PART-1-1.124049          42.9815       NO       
+    PART-1-1.124054          34.6389       NO       
+    PART-1-1.124090          44.5054       NO       
+    PART-1-1.124121          38.7306       NO       
+    PART-1-1.124129          38.5494       NO       
+    PART-1-1.124139          37.8085       NO       
+    PART-1-1.124178          30.4099       NO       
+    PART-1-1.124222           41.976       NO       
+    PART-1-1.124226          41.2077       NO       
+    PART-1-1.124263          30.8088       NO       
+    PART-1-1.124297          32.6987       NO       
+    PART-1-1.124352          44.2408       NO       
+    PART-1-1.124371          29.3958       NO       
+    PART-1-1.124372          19.7161       NO       
+    PART-1-1.124397          40.6332       NO       
+    PART-1-1.124401           36.892       NO       
+    PART-1-1.124408          42.8916       NO       
+    PART-1-1.124437          43.4954       NO       
+    PART-1-1.124507          38.7974       NO       
+    PART-1-1.124518           36.184       NO       
+    PART-1-1.124565          39.3715       NO       
+    PART-1-1.124595          42.5349       NO       
+    PART-1-1.124635          38.9955       NO       
+    PART-1-1.124649          40.3323       NO       
+    PART-1-1.124667           41.785       NO       
+    PART-1-1.124714           24.657       NO       
+    PART-1-1.124725          39.6853       NO       
+    PART-1-1.124749          22.9086       NO       
+    PART-1-1.124750           42.543       NO       
+    PART-1-1.124759          38.6059       NO       
+    PART-1-1.124788          42.7931       NO       
+    PART-1-1.124792          32.6398       NO       
+    PART-1-1.124795          41.3149       NO       
+    PART-1-1.124798          43.3252       NO       
+    PART-1-1.124848          37.7093       NO       
+    PART-1-1.124858          38.4004       NO       
+    PART-1-1.124969          40.5868       NO       
+    PART-1-1.125025          44.5903       NO       
+    PART-1-1.125033          36.9424       NO       
+    PART-1-1.125039          44.2288       NO       
+    PART-1-1.125066          36.7538       NO       
+    PART-1-1.125117          43.7869       NO       
+    PART-1-1.125135          41.8447       NO       
+    PART-1-1.125158          44.3059       NO       
+    PART-1-1.125163           42.307       NO       
+    PART-1-1.125194          44.2029       NO       
+    PART-1-1.125244          44.4153       NO       
+    PART-1-1.125283          40.1716       NO       
+    PART-1-1.125324          43.3616       NO       
+    PART-1-1.125339          43.7759       NO       
+    PART-1-1.125456          35.3541       NO       
+    PART-1-1.125495          44.7688       NO       
+    PART-1-1.125565          44.3581       NO       
+    PART-1-1.125622          40.6618       NO       
+    PART-1-1.125636          41.2783       NO       
+    PART-1-1.125648          43.9432       NO       
+    PART-1-1.125649           37.425       NO       
+    PART-1-1.125675          43.6098       NO       
+    PART-1-1.125679          36.9002       NO       
+    PART-1-1.125682          38.2224       NO       
+    PART-1-1.125688          42.9562       NO       
+    PART-1-1.125697          40.2388       NO       
+    PART-1-1.125708          39.9644       NO       
+    PART-1-1.125714          42.5149       NO       
+    PART-1-1.125784          29.7226       NO       
+    PART-1-1.125787          41.1835       NO       
+    PART-1-1.125839          42.3852       NO       
+    PART-1-1.125848          43.0992       NO       
+    PART-1-1.125849          37.3461       NO       
+    PART-1-1.125851           30.756       NO       
+    PART-1-1.125866          40.8353       NO       
+    PART-1-1.125867          29.8914       NO       
+    PART-1-1.125868          43.7365       NO       
+    PART-1-1.125874          42.9596       NO       
+    PART-1-1.125890          43.0711       NO       
+    PART-1-1.125892          43.5465       NO       
+    PART-1-1.126033          44.5828       NO       
+    PART-1-1.126085           44.476       NO       
+    PART-1-1.126127          35.3817       NO       
+    PART-1-1.126148          33.8827       NO       
+    PART-1-1.126156          41.1191       NO       
+    PART-1-1.126162          36.9232       NO       
+    PART-1-1.126200          36.0838       NO       
+    PART-1-1.126202          44.7717       NO       
+    PART-1-1.126366           44.698       NO       
+    PART-1-1.126375          44.8465       NO       
+    PART-1-1.126379          37.2127       NO       
+    PART-1-1.126401          43.4925       NO       
+    PART-1-1.126426           40.687       NO       
+    PART-1-1.126436          33.7273       NO       
+    PART-1-1.126451          31.8401       NO       
+    PART-1-1.126507          44.2816       NO       
+    PART-1-1.126508          36.8012       NO       
+    PART-1-1.126512          43.0655       NO       
+    PART-1-1.126513          42.8451       NO       
+    PART-1-1.126544          43.7554       NO       
+    PART-1-1.126545          42.0746       NO       
+    PART-1-1.126599          40.8858       NO       
+    PART-1-1.126697          38.8899       NO       
+    PART-1-1.126717          40.1469       NO       
+    PART-1-1.126786          38.9296       NO       
+    PART-1-1.126795           43.191       NO       
+    PART-1-1.126798          42.4117       NO       
+    PART-1-1.126800          37.5578       NO       
+    PART-1-1.126900          29.3186       NO       
+    PART-1-1.126948          43.0531       NO       
+    PART-1-1.126958          44.1025       NO       
+    PART-1-1.126964          22.1039       NO       
+    PART-1-1.127017          40.0328       NO       
+    PART-1-1.127139           41.707       NO       
+    PART-1-1.127159          39.6858       NO       
+    PART-1-1.127245          44.7905       NO       
+    PART-1-1.127333          28.8718       NO       
+    PART-1-1.127385          41.4112       NO       
+    PART-1-1.127427           40.839       NO       
+    PART-1-1.127436          40.8097       NO       
+    PART-1-1.127467          35.3135       NO       
+    PART-1-1.127489          40.4837       NO       
+    PART-1-1.127500           40.289       NO       
+    PART-1-1.127513          42.1334       NO       
+    PART-1-1.127514          41.0073       NO       
+    PART-1-1.127614          42.7337       NO       
+    PART-1-1.127624          44.7023       NO       
+    PART-1-1.127654          44.3436       NO       
+    PART-1-1.127666          41.4142       NO       
+    PART-1-1.127674          40.8711       NO       
+    PART-1-1.127741          44.8404       NO       
+    PART-1-1.127774          43.9664       NO       
+    PART-1-1.127786          42.8214       NO       
+    PART-1-1.127797          42.5761       NO       
+    PART-1-1.127818          36.6639       NO       
+    PART-1-1.127962          23.9614       NO       
+    PART-1-1.127965           32.909       NO       
+    PART-1-1.127967          34.6389       NO       
+    PART-1-1.127998          41.5607       NO       
+    PART-1-1.128008          35.3095       NO       
+    PART-1-1.128011          42.5429       NO       
+    PART-1-1.128012          25.8254       NO       
+    PART-1-1.128014          30.8253       NO       
+    PART-1-1.128023          43.1854       NO       
+    PART-1-1.128051          40.6709       NO       
+    PART-1-1.128102           40.515       NO       
+    PART-1-1.128106          39.0163       NO       
+    PART-1-1.128116          34.0292       NO       
+    PART-1-1.128215          43.2086       NO       
+    PART-1-1.128317          44.8843       NO       
+    PART-1-1.128318            44.73       NO       
+    PART-1-1.128320          43.2451       NO       
+    PART-1-1.128466          33.1573       NO       
+    PART-1-1.128467          44.8963       NO       
+    PART-1-1.128472          41.9337       NO       
+    PART-1-1.128659          39.0692       NO       
+    PART-1-1.128698           38.984       NO       
+    PART-1-1.128756          38.0828       NO       
+    PART-1-1.128772          34.8465       NO       
+    PART-1-1.128796           39.997       NO       
+    PART-1-1.128802          44.4728       NO       
+    PART-1-1.128805          43.4029       NO       
+    PART-1-1.128806          31.6862       NO       
+    PART-1-1.128847           43.179       NO       
+    PART-1-1.128853          37.8675       NO       
+    PART-1-1.128862          44.2344       NO       
+    PART-1-1.128863          40.8061       NO       
+    PART-1-1.128876          42.8047       NO       
+    PART-1-1.128877          40.7118       NO       
+    PART-1-1.128945          31.7574       NO       
+    PART-1-1.129022          43.9439       NO       
+    PART-1-1.129024          37.1088       NO       
+    PART-1-1.129030          29.7766       NO       
+    PART-1-1.129103          44.4244       NO       
+    PART-1-1.129129          44.0478       NO       
+    PART-1-1.129140          37.3569       NO       
+    PART-1-1.129228          40.2388       NO       
+    PART-1-1.129229          41.4506       NO       
+    PART-1-1.129239          43.9431       NO       
+    PART-1-1.129261          29.4046       NO       
+    PART-1-1.129263          43.8402       NO       
+    PART-1-1.129309          38.7961       NO       
+    PART-1-1.129315          43.5369       NO       
+    PART-1-1.129451          41.9216       NO       
+    PART-1-1.129478          43.2425       NO       
+    PART-1-1.129514          42.2993       NO       
+    PART-1-1.129538          25.2573       NO       
+    PART-1-1.129579          42.9834       NO       
+    PART-1-1.129582          36.9671       NO       
+    PART-1-1.129620          38.1012       NO       
+    PART-1-1.129780          40.7225       NO       
+    PART-1-1.129826           42.114       NO       
+    PART-1-1.129847          39.7873       NO       
+    PART-1-1.129872           43.543       NO       
+    PART-1-1.129873          44.0953       NO       
+    PART-1-1.129877          44.9344       NO       
+    PART-1-1.129889          31.6574       NO       
+    PART-1-1.129900          44.6591       NO       
+    PART-1-1.129921          41.0457       NO       
+    PART-1-1.129922          26.5032       NO       
+    PART-1-1.129954          41.2048       NO       
+    PART-1-1.129957          43.0534       NO       
+    PART-1-1.129958          40.6843       NO       
+    PART-1-1.129990          43.6265       NO       
+    PART-1-1.129991          41.8292       NO       
+    PART-1-1.129992          41.5715       NO       
+    PART-1-1.130010          39.0852       NO       
+    PART-1-1.130022          43.7726       NO       
+    PART-1-1.130026          38.7847       NO       
+    PART-1-1.130049          44.8363       NO       
+    PART-1-1.130052          35.4957       NO       
+    PART-1-1.130071          38.3547       NO       
+    PART-1-1.130094          34.5416       NO       
+    PART-1-1.130118          44.0304       NO       
+    PART-1-1.130130          42.3739       NO       
+    PART-1-1.130209          42.5503       NO       
+    PART-1-1.130213          34.2716       NO       
+    PART-1-1.130226          44.5612       NO       
+    PART-1-1.130425          31.5791       NO       
+    PART-1-1.130427          41.6117       NO       
+    PART-1-1.130445          39.7434       NO       
+    PART-1-1.130447          41.6622       NO       
+    PART-1-1.130474          39.0586       NO       
+    PART-1-1.130491          41.9556       NO       
+    PART-1-1.130495           40.841       NO       
+    PART-1-1.130533          44.4682       NO       
+    PART-1-1.130545          37.0415       NO       
+    PART-1-1.130563          42.5446       NO       
+    PART-1-1.130593           42.341       NO       
+    PART-1-1.130622          42.8613       NO       
+    PART-1-1.130647          36.7122       NO       
+    PART-1-1.130690          44.8191       NO       
+    PART-1-1.130706          44.4699       NO       
+    PART-1-1.130707          43.4064       NO       
+    PART-1-1.130822          44.2054       NO       
+    PART-1-1.130823          42.1607       NO       
+    PART-1-1.131036          38.4896       NO       
+    PART-1-1.131056          35.6921       NO       
+    PART-1-1.131059          44.3997       NO       
+    PART-1-1.131060          34.9089       NO       
+    PART-1-1.131070          42.1177       NO       
+    PART-1-1.131090          33.0843       NO       
+    PART-1-1.131189          36.0352       NO       
+    PART-1-1.131228          44.4285       NO       
+    PART-1-1.131243          33.4962       NO       
+    PART-1-1.131265           44.587       NO       
+    PART-1-1.131271          32.9084       NO       
+    PART-1-1.131273          31.0175       NO       
+    PART-1-1.131296          40.6432       NO       
+    PART-1-1.131351          41.0097       NO       
+    PART-1-1.131365          33.6147       NO       
+    PART-1-1.131368           31.724       NO       
+    PART-1-1.131439          35.6902       NO       
+    PART-1-1.131459          35.6429       NO       
+    PART-1-1.131510          35.0482       NO       
+    PART-1-1.131528          33.8184       NO       
+    PART-1-1.131540          40.6768       NO       
+    PART-1-1.131552          37.4969       NO       
+    PART-1-1.131553          33.0255       NO       
+    PART-1-1.131588          38.2704       NO       
+    PART-1-1.131591          41.5845       NO       
+    PART-1-1.131645          32.6184       NO       
+    PART-1-1.131700          39.3762       NO       
+    PART-1-1.131734          34.9384       NO       
+    PART-1-1.131800          41.1011       NO       
+    PART-1-1.131805          35.5903       NO       
+    PART-1-1.131848          30.5394       NO       
+    PART-1-1.131857          43.1266       NO       
+    PART-1-1.131895          42.9811       NO       
+    PART-1-1.131898          42.7347       NO       
+    PART-1-1.131977             44.8       NO       
+    PART-1-1.131981          36.2994       NO       
+    PART-1-1.131984          39.1999       NO       
+    PART-1-1.131987          44.9451       NO       
+    PART-1-1.131997          41.6643       NO       
+    PART-1-1.132001          30.8841       NO       
+    PART-1-1.132004          39.6432       NO       
+    PART-1-1.132014          44.8137       NO       
+    PART-1-1.132028           41.627       NO       
+    PART-1-1.132035          44.6321       NO       
+    PART-1-1.132039          26.4322       NO       
+    PART-1-1.132042          37.7593       NO       
+    PART-1-1.132067          42.7488       NO       
+    PART-1-1.132101          38.5354       NO       
+    PART-1-1.132109          44.1939       NO       
+    PART-1-1.132154          41.6933       NO       
+    PART-1-1.132193           35.045       NO       
+    PART-1-1.132219          36.6963       NO       
+    PART-1-1.132233          37.9898       NO       
+    PART-1-1.132235          44.7447       NO       
+    PART-1-1.132236          38.9845       NO       
+    PART-1-1.132280             40.9       NO       
+    PART-1-1.132311          44.6641       NO       
+    PART-1-1.132328          44.4882       NO       
+    PART-1-1.132332          38.3942       NO       
+    PART-1-1.132335          40.7735       NO       
+    PART-1-1.132350          43.3004       NO       
+    PART-1-1.132352          44.6204       NO       
+    PART-1-1.132362          43.5557       NO       
+    PART-1-1.132365          43.0897       NO       
+    PART-1-1.132373           43.186       NO       
+    PART-1-1.132375          39.6878       NO       
+    PART-1-1.132379           39.077       NO       
+    PART-1-1.132404          39.0526       NO       
+    PART-1-1.132437          34.8515       NO       
+    PART-1-1.132453          43.2882       NO       
+    PART-1-1.132467          39.7379       NO       
+    PART-1-1.132521          41.0984       NO       
+    PART-1-1.132525          39.9028       NO       
+    PART-1-1.132547           39.742       NO       
+    PART-1-1.132564          38.2712       NO       
+    PART-1-1.132607          43.1271       NO       
+    PART-1-1.132610          44.2905       NO       
+    PART-1-1.132611          41.7819       NO       
+    PART-1-1.132644           41.877       NO       
+    PART-1-1.132651          34.5793       NO       
+    PART-1-1.132655          38.1805       NO       
+    PART-1-1.132658          42.8047       NO       
+    PART-1-1.132669          40.3932       NO       
+    PART-1-1.132673          36.9805       NO       
+    PART-1-1.132676          41.0058       NO       
+    PART-1-1.132679          44.9739       NO       
+    PART-1-1.132692          41.8844       NO       
+    PART-1-1.132700          44.7355       NO       
+    PART-1-1.132729          44.7894       NO       
+    PART-1-1.132776           38.517       NO       
+    PART-1-1.132792          40.9809       NO       
+    PART-1-1.132801          39.8222       NO       
+    PART-1-1.132849          43.1744       NO       
+    PART-1-1.132939          38.2345       NO       
+    PART-1-1.132940          32.4787       NO       
+    PART-1-1.132996          44.0938       NO       
+    PART-1-1.133022          40.4456       NO       
+    PART-1-1.133033          41.8079       NO       
+    PART-1-1.133035          40.7858       NO       
+    PART-1-1.133076          43.7069       NO       
+    PART-1-1.133089          29.7258       NO       
+    PART-1-1.133119          44.5174       NO       
+    PART-1-1.133158          39.5137       NO       
+    PART-1-1.133175          44.4775       NO       
+    PART-1-1.133235          44.4972       NO       
+    PART-1-1.133245          40.1215       NO       
+    PART-1-1.133247          42.6507       NO       
+    PART-1-1.133278          42.7315       NO       
+    PART-1-1.133279          42.4367       NO       
+    PART-1-1.133397          43.4144       NO       
+    PART-1-1.133408          44.1118       NO       
+    PART-1-1.133411          29.0613       NO       
+    PART-1-1.133484          24.1251       NO       
+    PART-1-1.133485          26.9715       NO       
+    PART-1-1.133488          42.2387       NO       
+    PART-1-1.133588          37.2005       NO       
+    PART-1-1.133599          41.0223       NO       
+    PART-1-1.133603          39.3174       NO       
+    PART-1-1.133628          43.0177       NO       
+    PART-1-1.133682          37.2947       NO       
+    PART-1-1.133866          44.2208       NO       
+    PART-1-1.133901          42.4881       NO       
+    PART-1-1.133953          42.9722       NO       
+    PART-1-1.133954          42.6235       NO       
+    PART-1-1.133956          39.7818       NO       
+    PART-1-1.133958          34.1564       NO       
+    PART-1-1.133961          43.5311       NO       
+    PART-1-1.133969          43.4214       NO       
+    PART-1-1.133987           38.482       NO       
+    PART-1-1.134009          34.0675       NO       
+    PART-1-1.134019          36.3478       NO       
+    PART-1-1.134021           42.477       NO       
+    PART-1-1.134023          32.7112       NO       
+    PART-1-1.134031          30.8337       NO       
+    PART-1-1.134052           27.315       NO       
+    PART-1-1.134055          41.0955       NO       
+    PART-1-1.134066          30.6036       NO       
+    PART-1-1.134087          43.3173       NO       
+    PART-1-1.134108          29.8606       NO       
+    PART-1-1.134120           42.458       NO       
+    PART-1-1.134139          37.9099       NO       
+    PART-1-1.134148          30.5844       NO       
+    PART-1-1.134170          38.0733       NO       
+    PART-1-1.134175          32.3181       NO       
+    PART-1-1.134182          44.3801       NO       
+    PART-1-1.134203          41.9718       NO       
+    PART-1-1.134205          33.1401       NO       
+    PART-1-1.134206           41.015       NO       
+    PART-1-1.134207          44.4979       NO       
+    PART-1-1.134232          29.4878       NO       
+    PART-1-1.134249          42.8338       NO       
+    PART-1-1.134260          44.5361       NO       
+    PART-1-1.134261           43.107       NO       
+    PART-1-1.134301          40.8174       NO       
+    PART-1-1.134305           42.457       NO       
+    PART-1-1.134318          35.9599       NO       
+    PART-1-1.134328          36.0189       NO       
+    PART-1-1.134336          38.2016       NO       
+    PART-1-1.134338          35.8569       NO       
+    PART-1-1.134339          44.9425       NO       
+    PART-1-1.134349           34.804       NO       
+    PART-1-1.134373           39.212       NO       
+    PART-1-1.134386          44.7817       NO       
+    PART-1-1.134413          41.4632       NO       
+    PART-1-1.134416          43.6807       NO       
+    PART-1-1.134445          42.2057       NO       
+    PART-1-1.134454          30.2611       NO       
+    PART-1-1.134494          43.8193       NO       
+    PART-1-1.134520          40.7565       NO       
+    PART-1-1.134521          41.6645       NO       
+    PART-1-1.134523          40.6323       NO       
+    PART-1-1.134526          44.1613       NO       
+    PART-1-1.134527          39.9653       NO       
+    PART-1-1.134539          38.7273       NO       
+    PART-1-1.134540          41.8442       NO       
+    PART-1-1.134549          40.0421       NO       
+    PART-1-1.134571          39.9434       NO       
+    PART-1-1.134606           36.284       NO       
+    PART-1-1.134610          28.7359       NO       
+    PART-1-1.134613           38.851       NO       
+    PART-1-1.134627          44.4989       NO       
+    PART-1-1.134638           42.981       NO       
+    PART-1-1.134640          41.0952       NO       
+    PART-1-1.134660          39.7292       NO       
+    PART-1-1.134662          44.2627       NO       
+    PART-1-1.134691          34.9573       NO       
+    PART-1-1.134727          41.4266       NO       
+    PART-1-1.134731          39.9207       NO       
+    PART-1-1.134732          42.9712       NO       
+    PART-1-1.134778          30.1616       NO       
+    PART-1-1.134820          32.4646       NO       
+    PART-1-1.134834          41.1779       NO       
+    PART-1-1.134858          42.5679       NO       
+    PART-1-1.134880          43.7824       NO       
+    PART-1-1.134916          43.6769       NO       
+    PART-1-1.134918          38.8491       NO       
+    PART-1-1.134944          43.8553       NO       
+    PART-1-1.134956           41.874       NO       
+    PART-1-1.134969          35.3774       NO       
+    PART-1-1.134972          44.8627       NO       
+    PART-1-1.135005          42.1014       NO       
+    PART-1-1.135033           42.931       NO       
+    PART-1-1.135043          40.0361       NO       
+    PART-1-1.135044          43.5968       NO       
+    PART-1-1.135090          43.7944       NO       
+    PART-1-1.135122          40.5618       NO       
+    PART-1-1.135123            36.67       NO       
+    PART-1-1.135149          43.0855       NO       
+    PART-1-1.135160          41.9642       NO       
+    PART-1-1.135185          38.4728       NO       
+    PART-1-1.135208          41.8852       NO       
+    PART-1-1.135237          41.0042       NO       
+    PART-1-1.135253          44.5006       NO       
+    PART-1-1.135271          41.8803       NO       
+    PART-1-1.135285          38.3685       NO       
+    PART-1-1.135313          32.2082       NO       
+    PART-1-1.135360          37.8789       NO       
+    PART-1-1.135367          43.5776       NO       
+    PART-1-1.135375          35.8803       NO       
+    PART-1-1.135386          44.1258       NO       
+    PART-1-1.135408          39.9139       NO       
+    PART-1-1.135409          37.3654       NO       
+    PART-1-1.135430          42.6492       NO       
+    PART-1-1.135437          40.4487       NO       
+    PART-1-1.135454          40.9214       NO       
+    PART-1-1.135460           36.552       NO       
+    PART-1-1.135485          36.0369       NO       
+    PART-1-1.135558          44.4814       NO       
+    PART-1-1.135606          42.8853       NO       
+    PART-1-1.135658          37.7822       NO       
+    PART-1-1.135729          37.8021       NO       
+    PART-1-1.135776          44.9228       NO       
+    PART-1-1.135848          27.7209       NO       
+    PART-1-1.135851          38.9746       NO       
+    PART-1-1.135862          32.8207       NO       
+    PART-1-1.135870          40.9785       NO       
+    PART-1-1.135880          43.7805       NO       
+    PART-1-1.135883          35.1214       NO       
+    PART-1-1.135894          39.3578       NO       
+    PART-1-1.135895          26.5995       NO       
+    PART-1-1.135910          41.9741       NO       
+    PART-1-1.135911          32.3311       NO       
+    PART-1-1.135913          29.3227       NO       
+    PART-1-1.135922          42.5149       NO       
+    PART-1-1.135943           39.465       NO       
+    PART-1-1.135945          43.5002       NO       
+    PART-1-1.135962          39.8632       NO       
+    PART-1-1.136083          43.9586       NO       
+    PART-1-1.136097          40.9709       NO       
+    PART-1-1.136104          23.6958       NO       
+    PART-1-1.136117          35.9305       NO       
+    PART-1-1.136128          43.1974       NO       
+    PART-1-1.136132          41.9643       NO       
+    PART-1-1.136152          43.7996       NO       
+    PART-1-1.136166          43.4842       NO       
+    PART-1-1.136188          40.8158       NO       
+    PART-1-1.136190          42.2781       NO       
+    PART-1-1.136195          36.5242       NO       
+    PART-1-1.136200          34.0255       NO       
+    PART-1-1.136233          39.7443       NO       
+    PART-1-1.136283          41.1688       NO       
+    PART-1-1.136298          34.8487       NO       
+    PART-1-1.136344          38.9833       NO       
+    PART-1-1.136346          41.5763       NO       
+    PART-1-1.136358          29.7758       NO       
+    PART-1-1.136383          39.1475       NO       
+    PART-1-1.136466          29.0645       NO       
+    PART-1-1.136467          42.8053       NO       
+    PART-1-1.136475          37.7802       NO       
+    PART-1-1.136520          43.2338       NO       
+    PART-1-1.136715          42.3735       NO       
+    PART-1-1.136721          44.4223       NO       
+    PART-1-1.136722          36.5441       NO       
+    PART-1-1.136751          36.7871       NO       
+    PART-1-1.136762          41.6248       NO       
+    PART-1-1.136773          39.7077       NO       
+    PART-1-1.136775          43.3071       NO       
+    PART-1-1.136776          37.8409       NO       
+    PART-1-1.136778          30.6335       NO       
+    PART-1-1.136791          41.4023       NO       
+    PART-1-1.136793          44.1309       NO       
+    PART-1-1.136796          42.4488       NO       
+    PART-1-1.136805          43.6646       NO       
+    PART-1-1.136824          32.1505       NO       
+    PART-1-1.136863           39.873       NO       
+    PART-1-1.136885          41.6589       NO       
+    PART-1-1.136886          39.1006       NO       
+    PART-1-1.136887          32.3481       NO       
+    PART-1-1.136897          37.1057       NO       
+    PART-1-1.136930          32.7935       NO       
+    PART-1-1.136957          38.9941       NO       
+    PART-1-1.136995          36.7904       NO       
+    PART-1-1.137009          44.9716       NO       
+    PART-1-1.137029           41.574       NO       
+    PART-1-1.137031          44.3554       NO       
+    PART-1-1.137034          21.6758       NO       
+    PART-1-1.137065          41.2621       NO       
+    PART-1-1.137118            43.38       NO       
+    PART-1-1.137128           43.645       NO       
+    PART-1-1.137161          41.2385       NO       
+    PART-1-1.137172          39.5851       NO       
+    PART-1-1.137173          37.7705       NO       
+    PART-1-1.137179          42.5003       NO       
+    PART-1-1.137189          40.2679       NO       
+    PART-1-1.137237          34.5486       NO       
+    PART-1-1.137247          39.2498       NO       
+    PART-1-1.137255          42.6424       NO       
+    PART-1-1.137307          43.8744       NO       
+    PART-1-1.137381          37.0301       NO       
+    PART-1-1.137487          41.7376       NO       
+    PART-1-1.137540          41.5034       NO       
+    PART-1-1.137544          44.7631       NO       
+    PART-1-1.137594          44.3604       NO       
+    PART-1-1.137598          40.6274       NO       
+    PART-1-1.137609           36.601       NO       
+    PART-1-1.137612          44.8138       NO       
+    PART-1-1.137663          44.0701       NO       
+    PART-1-1.137676          42.5461       NO       
+    PART-1-1.137690          38.3157       NO       
+    PART-1-1.137693          39.3944       NO       
+    PART-1-1.137709          36.1267       NO       
+    PART-1-1.137725          38.8657       NO       
+    PART-1-1.137744          42.7708       NO       
+    PART-1-1.137800          32.4129       NO       
+    PART-1-1.137812          35.8019       NO       
+    PART-1-1.137817          42.7434       NO       
+    PART-1-1.137836          33.8661       NO       
+    PART-1-1.137863          40.6565       NO       
+    PART-1-1.137873          27.8543       NO       
+    PART-1-1.137874          36.4394       NO       
+    PART-1-1.137877          27.3175       NO       
+    PART-1-1.137885          37.1937       NO       
+    PART-1-1.137886          43.0316       NO       
+    PART-1-1.137887          42.9127       NO       
+    PART-1-1.137888          44.0178       NO       
+    PART-1-1.137915          40.4459       NO       
+    PART-1-1.137944          36.3081       NO       
+    PART-1-1.137956          39.2588       NO       
+    PART-1-1.137983          44.5937       NO       
+    PART-1-1.137985          42.6154       NO       
+    PART-1-1.137998          44.3662       NO       
+    PART-1-1.138006          36.4773       NO       
+    PART-1-1.138008          37.7718       NO       
+    PART-1-1.138009           37.992       NO       
+    PART-1-1.138043           42.914       NO       
+    PART-1-1.138045          36.3099       NO       
+    PART-1-1.138050          39.9968       NO       
+    PART-1-1.138127          40.0543       NO       
+    PART-1-1.138143           31.556       NO       
+    PART-1-1.138171           38.824       NO       
+    PART-1-1.138179          33.7908       NO       
+    PART-1-1.138180           43.908       NO       
+    PART-1-1.138197           36.766       NO       
+    PART-1-1.138198          38.0161       NO       
+    PART-1-1.138210          39.3526       NO       
+    PART-1-1.138214          40.9587       NO       
+    PART-1-1.138255          33.5018       NO       
+    PART-1-1.138267          40.5492       NO       
+    PART-1-1.138271          42.6242       NO       
+    PART-1-1.138284          44.9027       NO       
+    PART-1-1.138288          36.7054       NO       
+    PART-1-1.138309          41.7113       NO       
+    PART-1-1.138327          38.7657       NO       
+    PART-1-1.138343          41.6303       NO       
+    PART-1-1.138492           42.497       NO       
+    PART-1-1.138493          43.5086       NO       
+    PART-1-1.138597          39.3408       NO       
+    PART-1-1.138598          35.2405       NO       
+    PART-1-1.138601          44.7677       NO       
+    PART-1-1.138602          41.2169       NO       
+    PART-1-1.138617          40.9806       NO       
+    PART-1-1.138641          29.1196       NO       
+    PART-1-1.138642          38.8839       NO       
+    PART-1-1.138660          34.5311       NO       
+    PART-1-1.138673          39.6325       NO       
+    PART-1-1.138676          44.4796       NO       
+    PART-1-1.138681          38.3848       NO       
+    PART-1-1.138685          39.4546       NO       
+    PART-1-1.138686          41.3899       NO       
+    PART-1-1.138688          41.5934       NO       
+    PART-1-1.138689          43.8547       NO       
+    PART-1-1.138693            44.33       NO       
+    PART-1-1.138764          34.0563       NO       
+    PART-1-1.138766          43.7626       NO       
+    PART-1-1.138786           36.054       NO       
+    PART-1-1.138788          38.1848       NO       
+    PART-1-1.138790          38.8732       NO       
+    PART-1-1.138800           36.118       NO       
+    PART-1-1.138814          39.3146       NO       
+    PART-1-1.138816          28.5657       NO       
+    PART-1-1.138860          41.2002       NO       
+    PART-1-1.138861          38.0068       NO       
+    PART-1-1.138862          25.6618       NO       
+    PART-1-1.138869          32.8618       NO       
+    PART-1-1.138882          36.1545       NO       
+    PART-1-1.138893           39.362       NO       
+    PART-1-1.138900          35.7551       NO       
+    PART-1-1.138929          43.5821       NO       
+    PART-1-1.138938           44.265       NO       
+    PART-1-1.138963          44.2173       NO       
+    PART-1-1.138964          43.5543       NO       
+    PART-1-1.138997          37.1846       NO       
+    PART-1-1.138998          34.1972       NO       
+    PART-1-1.139007          41.5254       NO       
+    PART-1-1.139047          39.5619       NO       
+    PART-1-1.139048          37.6062       NO       
+    PART-1-1.139050          41.9349       NO       
+    PART-1-1.139150          41.6652       NO       
+    PART-1-1.139154          43.1767       NO       
+    PART-1-1.139157          42.3039       NO       
+    PART-1-1.139172          43.7763       NO       
+    PART-1-1.139190          30.0554       NO       
+    PART-1-1.139193          44.3153       NO       
+    PART-1-1.139195          40.9542       NO       
+    PART-1-1.139202           42.587       NO       
+    PART-1-1.139210          36.8069       NO       
+    PART-1-1.139223          44.8368       NO       
+    PART-1-1.139252          44.7503       NO       
+    PART-1-1.139287          37.8188       NO       
+    PART-1-1.139297          40.2051       NO       
+    PART-1-1.139310          41.4573       NO       
+    PART-1-1.139325          43.8946       NO       
+    PART-1-1.139332           34.759       NO       
+    PART-1-1.139344          36.3535       NO       
+    PART-1-1.139345          31.4025       NO       
+    PART-1-1.139358           44.171       NO       
+    PART-1-1.139377           44.395       NO       
+    PART-1-1.139401          39.8592       NO       
+    PART-1-1.139413          32.6423       NO       
+    PART-1-1.139484          42.4572       NO       
+    PART-1-1.139486           41.201       NO       
+    PART-1-1.139519          36.3253       NO       
+    PART-1-1.139522          42.9118       NO       
+    PART-1-1.139524           42.836       NO       
+    PART-1-1.139558          44.9589       NO       
+    PART-1-1.139605          39.6209       NO       
+    PART-1-1.139608          42.9635       NO       
+    PART-1-1.139641          37.0425       NO       
+    PART-1-1.139648          42.1721       NO       
+    PART-1-1.139659          39.4253       NO       
+    PART-1-1.139681          39.2539       NO       
+    PART-1-1.139683           41.951       NO       
+    PART-1-1.139693          35.3847       NO       
+    PART-1-1.139694          32.9275       NO       
+    PART-1-1.139695          35.7545       NO       
+    PART-1-1.139696          29.0125       NO       
+    PART-1-1.139699          37.6541       NO       
+    PART-1-1.139701          42.3446       NO       
+    PART-1-1.139718           44.514       NO       
+    PART-1-1.139731          36.7547       NO       
+    PART-1-1.139732          35.6646       NO       
+    PART-1-1.139739          37.5766       NO       
+    PART-1-1.139802          41.2427       NO       
+    PART-1-1.139822          31.0078       NO       
+    PART-1-1.139847          44.4836       NO       
+    PART-1-1.139851          42.5517       NO       
+    PART-1-1.139891          39.5266       NO       
+    PART-1-1.139959          44.9189       NO       
+    PART-1-1.139960           36.918       NO       
+    PART-1-1.139966          31.3907       NO       
+    PART-1-1.139973          26.5768       NO       
+    PART-1-1.139978          43.2646       NO       
+    PART-1-1.139992           41.082       NO       
+    PART-1-1.139999           39.172       NO       
+    PART-1-1.140004          29.7259       NO       
+    PART-1-1.140042          42.4328       NO       
+    PART-1-1.140043          33.7969       NO       
+    PART-1-1.140044          36.9389       NO       
+    PART-1-1.140046          16.1241       NO       
+    PART-1-1.140047          44.7026       NO       
+    PART-1-1.140049          38.2624       NO       
+    PART-1-1.140054          43.8551       NO       
+    PART-1-1.140055          40.4621       NO       
+    PART-1-1.140057          35.1255       NO       
+    PART-1-1.140060           36.131       NO       
+    PART-1-1.140064          44.9308       NO       
+    PART-1-1.140083          40.7495       NO       
+    PART-1-1.140091           34.932       NO       
+    PART-1-1.140141           38.666       NO       
+    PART-1-1.140191          23.0809       NO       
+    PART-1-1.140237          22.1562       NO       
+    PART-1-1.140238          41.8829       NO       
+    PART-1-1.140283          41.0038       NO       
+    PART-1-1.140288          26.1691       NO       
+    PART-1-1.140308          41.9837       NO       
+    PART-1-1.140331          23.5529       NO       
+    PART-1-1.140349          42.2522       NO       
+    PART-1-1.140350          43.2879       NO       
+    PART-1-1.140364          38.4924       NO       
+    PART-1-1.140379          19.8442       NO       
+    PART-1-1.140380          34.4929       NO       
+    PART-1-1.140383          44.3754       NO       
+    PART-1-1.140408           42.322       NO       
+    PART-1-1.140440          38.4182       NO       
+    PART-1-1.140442          40.0526       NO       
+    PART-1-1.140444          42.0576       NO       
+    PART-1-1.140446          34.2717       NO       
+    PART-1-1.140456          43.8505       NO       
+    PART-1-1.140465          43.8386       NO       
+    PART-1-1.140499          43.6088       NO       
+    PART-1-1.140575          34.1175       NO       
+    PART-1-1.140613           41.636       NO       
+    PART-1-1.140684          43.6941       NO       
+    PART-1-1.140685          42.9654       NO       
+    PART-1-1.140695          44.5851       NO       
+    PART-1-1.140711          42.2657       NO       
+    PART-1-1.140725          41.4334       NO       
+    PART-1-1.140729          32.6228       NO       
+    PART-1-1.140735          36.2262       NO       
+    PART-1-1.140765          40.7265       NO       
+    PART-1-1.140772          37.2895       NO       
+    PART-1-1.140777          31.1833       NO       
+    PART-1-1.140835          35.9278       NO       
+    PART-1-1.140836          31.1304       NO       
+    PART-1-1.140838          21.1428       NO       
+    PART-1-1.140841          42.2255       NO       
+    PART-1-1.140856          38.8335       NO       
+    PART-1-1.140867          38.5757       NO       
+    PART-1-1.140891          38.1173       NO       
+    PART-1-1.140903          37.9611       NO       
+    PART-1-1.140911          36.5048       NO       
+    PART-1-1.140923          42.9717       NO       
+    PART-1-1.140926          41.3373       NO       
+    PART-1-1.140936          42.4675       NO       
+    PART-1-1.140945          40.4123       NO       
+    PART-1-1.140960          43.1086       NO       
+    PART-1-1.141014          41.9994       NO       
+  
+  
+  *amplitude, name=AMP-1
+  *output, field
+  *output, field, variable=PRESELECT, numberinterval=40
+  *output, history, variable=PRESELECT
+  *Step, name=Step-1, nlgeom=YES
+  *Step, name=Step-1, nlgeom=YES
+  *dynamic, explicit
+  *boundary
+  *boundary, amplitude=AMP-1
+  *output, field
+  *nodeoutput
+  *output, field, variable=PRESELECT, numberinterval=40
+  *output, history, variable=PRESELECT
+  *endstep
+  *surfaceinteraction, name=INTPROP-1
+  *friction
+  *Step, name=Step-1, nlgeom=YES
+  *dynamic, explicit
+  *boundary
+
+ ***WARNING: THE OPTION *BOUNDARY,TYPE=DISPLACEMENT HAS BEEN USED; CHECK STATUS 
+             FILE BETWEEN STEPS FOR WARNINGS ON ANY JUMPS PRESCRIBED ACROSS THE 
+             STEPS IN DISPLACEMENT VALUES OF TRANSLATIONAL DOF. FOR ROTATIONAL 
+             DOF MAKE SURE THAT THERE ARE NO SUCH JUMPS. ALL JUMPS IN 
+             DISPLACEMENTS ACROSS STEPS ARE IGNORED
+  *boundary, amplitude=AMP-1
+  *contact, op=NEW
+  *contactinclusions, allexterior
+  *contactpropertyassignment
+  *endstep
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                 29244
+          NUMBER OF NODES IS                                    36976
+          NUMBER OF NODES DEFINED BY THE USER                   36976
+          TOTAL NUMBER OF VARIABLES IN THE MODEL               110934
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =   1.0000    
+       SYSTEM TIME (SEC)    =  0.30000    
+       TOTAL CPU TIME (SEC) =   1.3000    
+       WALLCLOCK TIME (SEC) =          1

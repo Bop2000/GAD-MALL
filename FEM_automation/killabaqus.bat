@@ -1,0 +1,1 @@
+    abaqus cae -script E:\qinyu\daijiabao\BatchProcess_v0.5.py
