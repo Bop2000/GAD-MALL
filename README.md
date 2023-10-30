@@ -70,5 +70,5 @@ For more about `Other State-of-the-art Active Learning Methods` compared with ou
 If you find this work interesting, welcome to cite our paper!
 
 ```
-
+[1] Peng, B., Wei, Y., Qin, Y. et al. Machine learning-enabled constrained multi-objective design of architected materials. Nat Commun 14, 6630 (2023). https://doi.org/10.1038/s41467-023-42415-y
 ```
