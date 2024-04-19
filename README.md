@@ -24,7 +24,7 @@ pip install -r requirements.txt
 ```
 which should install in about few minutes.
 
-## Environements
+## Environments
 The developmental version of the package has been tested on the following systems and drivers.
 - Ubuntu 18.04
 - CUDA 11.4
@@ -65,7 +65,7 @@ For more about `Model Parameters Optimizing using Bayesian Optimization`, see co
 
 For more about `Other State-of-the-art Active Learning Methods` compared with our best method GAD-MALL, see cede and `README` in folder `Other-State-of-the-art-Active-Learning`
 
-## CItation
+## Citation
 
 If you find this work interesting, welcome to cite our paper!
 
