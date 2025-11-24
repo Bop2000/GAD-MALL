@@ -14,4 +14,5 @@ To run this automated pipeline, the only thing is to use PowerShell to run `Batc
 **Note:** The initial porosity matrices are archived in the `finished.mat` file. Upon executing 'BatchProcess.ps1', the process unfolds in three stages. Firstly, Matlab is invoked to execute `test1.m`, which transforms the porosity matrices into corresponding Gyroid STL files. The second stage involves deploying Hypermesh to run `command.tcl`, which converts STL files into mesh files. In the final stage, Abaqus is employed to execute `BatchProcess_v0.4.py`, which conducts the Finite Element Method (FEM) analysis and archives the output as .odb files.
 
 ## Note
-If the program cannot be run, please check if the paths in the code are correct.
+1. If the program cannot be run, please check if the paths in the code are correct.
+2. If the FEM results are not rational, please kindly refer to the file `BatchProcess_1.py` in loacation `Finite Element Method by ABAQUS/abaqus_code`.
