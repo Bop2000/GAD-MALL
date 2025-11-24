@@ -15,4 +15,4 @@ To run this automated pipeline, the only thing is to use PowerShell to run `Batc
 
 ## Note
 1. If the program cannot be run, please check if the paths in the code are correct.
-2. If the FEM results are not rational, please kindly refer to the file `BatchProcess_1.py` in loacation `Finite Element Method by ABAQUS/abaqus_code`.
+2. If the FEM results are not rational, please kindly refer to the file `BatchProcess_1.py` for more detailed parameters for finite element simulation, which is located in the folder `Finite Element Method by ABAQUS/abaqus_code`.
